@@ -449,7 +449,13 @@ Generated: {self.timestamp}
                 num, code, desc, trl, status, programs, score, class_, drivers, retrofit, cert, infra = ampel
                 ampel_name = f"AMPEL-{num}-{code}"
                 emoji = self.get_green_emoji(score)
-                print(f"    [{idx}/10] {ampel_name} {emoji} (Score: {score})...")
+            ampel_limit = 10  # Limit for demo; update as needed
+            print(f"  Generating {ampel_limit} AMPELs sorted by green potential...")
+            for idx, ampel in enumerate(sorted_ampels[:ampel_limit], 1):  # Limit to top N for demo
+                num, code, desc, trl, status, programs, score, class_, drivers, retrofit, cert, infra = ampel
+                ampel_name = f"AMPEL-{num}-{code}"
+                emoji = self.get_green_emoji(score)
+                print(f"    [{idx}/{ampel_limit}] {ampel_name} {emoji} (Score: {score})...")
                 self.create_ampel_structure(domain_path / ampel_name, 
                                            num, code, desc, trl, status, programs,
                                            score, class_, drivers, retrofit, cert, infra)
