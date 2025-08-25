@@ -1,0 +1,11 @@
+# Ignore generated framework outputs during development
+OPTIM-GREEN*/
+SHOWCASE*/
+*.pyc
+__pycache__/
+.pytest_cache/
+.coverage
+*.log
+
+# Keep documentation examples
+!docs/examples/
