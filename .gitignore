@@ -36,9 +36,19 @@ venv.bak/
 *.swo
 *~
 
-# Generated framework outputs (except for demos)
+# Testing and coverage
+.pytest_cache/
+.coverage
+*.log
+
+# Generated framework outputs
+OPTIM-GREEN*/
+SHOWCASE*/
 OPTIM-COMPLETE-V10/
 OPTIM-FRAMEWORK/
+
+# Keep documentation examples
+!docs/examples/
 
 # Temporary files
 *.tmp

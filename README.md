@@ -291,6 +291,9 @@ Each Configuration Item progresses through:
 git clone https://github.com/your-org/OPTIM-DT_AMEDEO-PELLICCIA.git
 cd OPTIM-DT_AMEDEO-PELLICCIA
 
+# Install dependencies (from requirements.txt if it exists)
+pip install -r requirements.txt
+
 # Generate the V10.0 COMPLETE framework structure
 python3 OPTIM-Framework-Generator/generate_framework_v10.py
 
@@ -303,8 +306,14 @@ python3 OPTIM-Framework-Generator/generate_framework_v10.py --dry
 # Generate V8.0 legacy framework
 python3 OPTIM-Framework-Generator/generate_framework.py
 
-# Verify the structure
-python3 scripts/verify_structure.py
+# Generate the GREEN framework with sustainability scoring (V5.0)
+python3 scripts/generate_green_framework_v5.py
+
+# Generate with custom settings
+python3 scripts/generate_green_framework_v5.py --base OPTIM-GREEN --max-segments 5 --top-n 10
+
+# Dry run to preview
+python3 scripts/generate_green_framework_v5.py --dry
 
 # Generate documentation
 python3 scripts/generate_docs.py
@@ -337,10 +346,411 @@ The V10.0 generator creates an **ULTIMATE COMPLETE** structure:
 ### **Configuration**
 
 Edit `config/framework.yaml` to customize:
-- Domain selection
-- AMPEL subset
+- Domain selection  
+- AMPEL subset and green scoring
 - Lifecycle phases
 - Documentation format
+- Green potential thresholds
+
+See `docs/GREEN-FRAMEWORK-USAGE.md` for detailed usage guide.
+
+---
+
+## **✅ Certification Compliance**
+
+### **Regulatory Alignment**
+
+| Standard | Coverage | Status |
+|----------|----------|--------|
+| **FAR Part 25** | Full airworthiness standards | ✅ Compliant |
+| **CS-25** | EASA certification specification | ✅ Compliant |
+| **ARP4754A** | Development assurance | ✅ Integrated |
+| **DO-178C** | Software certification | ✅ Supported |
+| **DO-254** | Hardware certification | ✅ Supported |
+| **ISO 23247** | Digital Twin framework | ✅ Aligned |
+| **ISO 9001** | Quality management | ✅ Compatible |
+
+### **Key Compliance Features**
+
+- **Traceability**: Requirements to validation
+- **Configuration Control**: Full CI/CA management
+- **Change Management**: Impact analysis
+- **V&V Evidence**: Test documentation
+- **Certification Dossier**: Automated generation
+
+---
+
+## **🤝 Contributing**
+
+We welcome contributions! See [CONTRIBUTING.md](docs/CONTRIBUTING.md) for:
+- Code standards
+- Commit guidelines
+- Review process
+- Testing requirements
+
+### **Development Workflow**
+
+```bash
+# Create feature branch
+git checkout -b feature/your-feature
+
+# Make changes
+# Add tests
+# Update documentation
+
+# Submit pull request
+git push origin feature/your-feature
+```
+
+---
+
+## **📄 License**
+
+This framework is proprietary software. See [LICENSE](LICENSE) for details.
+
+### **Acknowledgments**
+
+- AMEDEO PELLICCIA - Framework architecture
+- GAIA AIR - Implementation partner
+- ISO/IEC JTC 1 - Digital Twin standards
+- FAA/EASA - Certification guidance
+
+---
+
+# **OPTIM-DT_AMEDEO-PELLICCIA Framework**
+
+## **Organizational, Procedural, Technical, Intelligent Machine as Digital Twin**
+
+[![Framework Version](https://img.shields.io/badge/Version-10.0-blue)]()
+[![TRL Coverage](https://img.shields.io/badge/TRL-2--9-green)]()
+[![AMPELs](https://img.shields.io/badge/AMPELs-35-orange)]()
+[![Segments](https://img.shields.io/badge/Segments-15-purple)]()
+[![Certification](https://img.shields.io/badge/FAR25-Compliant-red)]()
+[![Layers](https://img.shields.io/badge/OPTIM_Layers-5-lightblue)]()
+[![Domains](https://img.shields.io/badge/Domains-5-darkgreen)]()
+[![Generator](https://img.shields.io/badge/Generator-V10.0_Complete-gold)]()
+
+---
+
+## **🎯 Executive Summary**
+
+**OPTIM-DT_AMEDEO-PELLICCIA** is a comprehensive Digital Twin framework for aerospace systems development, certification, and lifecycle management. It integrates enterprise governance with technical implementation through a structured 5-layer OPTIM architecture supporting 35 aircraft morphologies (AMPELs) across 5 domains and all Technology Readiness Levels (TRL 2-9).
+
+### **Key Metrics - V10.0 ULTIMATE COMPLETE**
+- **35** Aircraft Morphologies (AMPELs) across 5 domains
+- **15** Technical Segments (AMEDEO-PELLICCIA) 
+- **5** OPTIM Integration Layers (O-P-T-I-M)
+- **5** Application Domains (AIR-SPACE-GROUND-DEFENSE-CROSS)
+- **11** Canonical Lifecycle Phases
+- **Variable** Configuration Items per segment
+- **Complete** CA/CI hierarchical structure
+- **FAR Part 25 / CS-25** Compliant Structure
+
+---
+
+## **📚 Table of Contents**
+
+1. [Framework Architecture](#framework-architecture)
+2. [OPTIM Layers](#optim-layers)
+3. [AMEDEO-PELLICCIA Segments](#amedeo-pelliccia-segments)
+4. [AMPEL Architectures](#ampel-architectures)
+5. [CA/CI Structure](#caci-structure)
+6. [Lifecycle Phases](#lifecycle-phases)
+7. [Installation & Usage](#installation--usage)
+8. [Certification Compliance](#certification-compliance)
+9. [Contributing](#contributing)
+10. [License](#license)
+
+---
+
+## **🏗️ Framework Architecture**
+
+```
+OPTIM-DT_AMEDEO-PELLICCIA/
+├── 00-FRAMEWORK/                 # Core framework components
+├── O-ORGANIZATIONAL/             # Enterprise governance (V10.0)
+├── P-PROCEDURAL/                 # Process management (V10.0)
+├── T-TECHNICAL/                  # Technical implementation (V10.0)
+│   └── AMEDEO-PELLICCIA/         # 35 AMPELs × 5 domains × 15 segments
+│       ├── AIR/                  # 35 AMPELs (complete aviation)
+│       ├── SPACE/                # 10 AMPELs (spacecraft systems)
+│       ├── GROUND/               # 10 AMPELs (ground vehicles)
+│       ├── DEFENSE/              # 10 AMPELs (military platforms)
+│       └── CROSS/                # 10 AMPELs (integrated systems)
+├── I-INTELLIGENT/                # AI/ML systems (V10.0)
+├── M-MACHINE/                    # Digital Twin implementation (V10.0)
+├── config/                       # Configuration files
+├── docs/                         # Documentation
+├── scripts/                      # Automation scripts
+└── tests/                        # Testing framework
+```
+
+---
+
+## **🔄 OPTIM Layers**
+
+### **Layer 1: ORGANIZATIONAL**
+Enterprise-level governance and strategic management
+- **Governance**: Board structure, committees, policies
+- **Strategy**: Vision, mission, roadmaps, objectives
+- **Decision Frameworks**: Approval matrices, escalation procedures
+- **Stakeholder Management**: Engagement plans, communication
+- **Risk Management**: Risk registry, mitigation strategies
+- **Compliance Management**: Regulatory alignment
+- **Portfolio Management**: Program coordination
+- **Resource Management**: Allocation and optimization
+
+### **Layer 2: PROCEDURAL**
+Process automation and workflow management
+- **Lifecycle Management**: Phase gates, milestones
+- **Workflow Automation**: Process orchestration
+- **Process Optimization**: Continuous improvement
+- **Compliance Procedures**: Audit trails, verification
+- **Quality Procedures**: Standards, inspections
+- **Change Management**: Configuration control
+- **Documentation Standards**: Templates, formats
+
+### **Layer 3: TECHNICAL-AMEDEO-PELLICCIA**
+15-segment technical architecture across 5 domains
+- **Domains**: AIR, SPACE, DEFENSE, GROUND, CROSS
+- **43 AMPELs** for AIR domain (TRL 2-9)
+- **15 Segments** per AMPEL
+- **Constituent Assemblies** (CAs)
+- **Configuration Items** (CIs)
+- **11 Lifecycle Phases** per CI
+
+### **Layer 4: INTELLIGENT**
+AI, machine learning, and optimization systems
+- **Machine Learning**: Predictive models, training pipelines
+- **Predictive Analytics**: Failure prediction, maintenance optimization
+- **Optimization Algorithms**: Resource allocation, scheduling
+- **Autonomous Decision-Making**: AI-assisted operations
+- **Neural Networks**: Deep learning models
+- **Computer Vision**: Image analysis, inspection
+- **Natural Language Processing**: Documentation analysis
+
+### **Layer 5: MACHINE**
+Digital Twin implementation and simulation
+- **Digital Twin Core**: Virtual aircraft representation
+- **Synthetic Data Generation**: Test data creation
+- **Real-Time Simulation**: Physics-based modeling
+- **Virtual Testing**: Certification by analysis
+- **Environment Simulation**: Operating conditions
+- **Scenario Generation**: Test case automation
+- **Validation Framework**: Model verification
+
+---
+
+## **🔧 AMEDEO-PELLICCIA Segments**
+
+The **15 Technical Segments** provide complete aircraft system coverage:
+
+| Code | Segment | Description | Primary Systems |
+|------|---------|-------------|-----------------|
+| **ARC** | ARCHITECTURE | Airframe Structure | Primary/Secondary structure, Control surfaces |
+| **MEC** | MECHANICAL | Mechanical Systems | Landing gear, Hydraulics, Actuation |
+| **ENV** | ENVIRONMENTAL | ECS & Protection | Air conditioning, Pressurization, Ice protection |
+| **DIG** | DIGITAL | Avionics & Computing | FMS, Displays, Flight computers |
+| **ENR** | ENERGY | Electrical Power | Generation, Distribution, Emergency power |
+| **OPS** | OPERATIONS | Operational Systems | Cockpit, Cabin, Emergency equipment |
+| **PRO** | PROPULSION | Engine & Fuel | Engines, Nacelles, Fuel systems |
+| **ELE** | ELECTRONICS | Communication/Nav | Radios, Navigation, Surveillance |
+| **LOG** | LOGISTICS | Support & Maintenance | Planning, Spare parts, Supply chain |
+| **LNK** | LINKS | Data Networks | ARINC, Ethernet, Wireless |
+| **INT** | INTEGRATION | System Interfaces | Mechanical/Electrical/Data interfaces |
+| **CTL** | CONTROL | Flight Controls | Primary/Secondary controls, Autopilot |
+| **CER** | CERTIFICATION | Type Certification | Compliance, Documentation, Approvals |
+| **ITL** | INTELLIGENCE | AI Systems | Predictive maintenance, Autonomy |
+| **APT** | AIRPORTS | Ground Support | GSE, Infrastructure, Services |
+
+---
+
+## **✈️ AMPEL Architectures**
+
+### **35 Aircraft Morphologies by TRL (V10.0 Complete)**
+
+#### **TRL 9 - Operational (15)**
+| AMPEL | Architecture | Examples |
+|-------|--------------|----------|
+| 01-TUW | Tube-and-Wing | Boeing 737/787, Airbus A320/350 |
+| 02-CANARD | Canard | Piaggio P180, Beech Starship |
+| 03-TSA | Three-Surface Aircraft | Piaggio P180 Avanti |
+| 04-TAILLESS | Tailless/Flying Wing | B-2 Spirit, B-21 Raider |
+| 05-DELTA | Delta Wing | Concorde, Mirage 2000, Tejas |
+| 06-VGW | Variable Geometry Wing | F-14, B-1 Lancer |
+| 07-VTOL-JET | VTOL Jet | Harrier, F-35B |
+| 08-TILTROTOR | Tiltrotor | V-22 Osprey, AW609 |
+| 09-AUTOGYRO | Autogyro | AutoGyro Cavalon |
+| 10-STOL | Short Take-Off and Landing | Twin Otter |
+| 11-AMPHIBIOUS | Amphibious | CL-415, US-2, Icon A5 |
+| 12-SUPERSONIC | Supersonic | Concorde, Boom Overture |
+| 13-ELECTRIC-FIXED | Electric Fixed Wing | Velis Electro |
+| 14-BIPLANE | Biplane | Pitts Special, WACO |
+| 15-TWIN-FUSELAGE | Twin Fuselage | Stratolaunch |
+
+#### **TRL 8-7 - Flight Demonstrated (8)**
+| AMPEL | Architecture | Status |
+|-------|--------------|--------|
+| 16-FSW | Forward-Swept Wing | X-29, Su-47 |
+| 17-TANDEM | Tandem Wing | Quickie, Dragonfly |
+| 18-LIFTING-BODY | Lifting Body | Dream Chaser |
+| 19-HYBRID-AIRSHIP | Hybrid Airship | Airlander |
+| 20-COMPOUND-HELI | Compound Helicopter | S-97 Raider |
+| 21-GROUND-EFFECT | Ground Effect Vehicle | REGENT |
+| 22-ELECTRIC-ROTARY | Electric Rotary Wing | Joby, Archer |
+| 23-SOLAR | Solar Powered | Zephyr S |
+
+#### **TRL 6-5 - Prototype (7)**
+| AMPEL | Architecture | Program |
+|-------|--------------|---------|
+| 24-BWB | Blended Wing Body | JetZero |
+| 25-TBW | Truss-Braced Wing | X-66A |
+| 26-OW | Oblique Wing | AD-1 |
+| 27-DP | Distributed Propulsion | X-57 |
+| 28-TILTWING | Tiltwing | CL-84 |
+| 29-HE | Hybrid-Electric (eSTOL/Regional) | Electra.aero |
+| 30-HYPERSONIC | Hypersonic | X-43A |
+
+#### **TRL 4-3 - Research (5)**
+| AMPEL | Architecture | Concept |
+|-------|--------------|---------|
+| 31-TAILSITTER | Tailsitter | XFY Pogo |
+| 32-JW | Joined Wing | SensorCraft |
+| 33-BW | Box Wing | PrandtlPlane |
+| 34-MW | Morphing Wing | MADCAT |
+| 35-BLI | Boundary Layer Ingestion | STARC-ABL |
+
+### **Domain Distribution (V10.0)**
+
+| Domain | AMPELs | Description | Coverage |
+|--------|--------|-------------|----------|
+| **AIR** | 35 | Complete aviation systems | All morphologies |
+| **SPACE** | 10 | Spacecraft configurations | AMPEL-18 to 27 |
+| **GROUND** | 10 | Ground vehicle systems | AMPEL-09 to 18 |
+| **DEFENSE** | 10 | Military platforms | AMPEL-04 to 13 |
+| **CROSS** | 10 | Integrated systems | AMPEL-21 to 30 |
+
+**Total: 75 Domain-AMPEL combinations**
+
+---
+
+## **📦 CA/CI Structure**
+
+### **Hierarchical Breakdown**
+
+```
+AMPEL (e.g., AMPEL-01-TUW)
+└── Segment (e.g., A-ARCHITECTURE)
+    └── Constituent Assembly (e.g., CA-A-001-PRIMARY-STRUCTURE)
+        └── Configuration Item (e.g., CI-CA-A-001-001)
+            └── 11 Lifecycle Phases
+```
+
+### **Example: Architecture Segment Structure**
+
+| CA | Assembly | CIs | Description |
+|----|----------|-----|-------------|
+| CA-A-001 | PRIMARY-STRUCTURE | 8 | Fuselage sections, bulkheads |
+| CA-A-002 | WING-STRUCTURE | 10 | Wing boxes, leading/trailing edges |
+| CA-A-003 | EMPENNAGE | 7 | Stabilizers, rudder, elevator |
+| CA-A-004 | CONTROL-SURFACES | 9 | Ailerons, flaps, spoilers |
+| CA-A-005 | DOORS-ACCESS | 6 | Passenger, cargo, emergency |
+
+---
+
+## **📅 Lifecycle Phases**
+
+### **11 Canonical Phases (UTCS)**
+
+Each Configuration Item progresses through:
+
+1. **01-Requirements** - System requirements, specifications
+2. **02-Design** - Architecture, CAD models, analysis
+3. **03-Building-Prototyping** - Prototype construction, testing
+4. **04-Executables-Packages** - Software, firmware, deployment
+5. **05-Verification-Validation** - Testing, validation reports
+6. **06-Integration-Qualification** - System integration, qualification
+7. **07-Certification-Security** - Compliance, type certification
+8. **08-Production-Scale** - Manufacturing, quality control
+9. **09-Ops-Services** - Operations, service bulletins
+10. **10-MRO** - Maintenance, repair, overhaul
+11. **11-Sustainment-Recycle** - Life extension, disposal
+
+---
+
+## **🚀 Installation & Usage**
+
+### **Quick Start**
+
+```bash
+# Clone the repository
+git clone https://github.com/your-org/OPTIM-DT_AMEDEO-PELLICCIA.git
+cd OPTIM-DT_AMEDEO-PELLICCIA
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Generate the V10.0 COMPLETE framework structure
+python3 OPTIM-Framework-Generator/generate_framework_v10.py
+
+# Or with custom options
+python3 OPTIM-Framework-Generator/generate_framework_v10.py --base MY-OPTIM-FRAMEWORK
+
+# Dry run test (no files created)
+python3 OPTIM-Framework-Generator/generate_framework_v10.py --dry
+
+# Generate V8.0 legacy framework
+python3 OPTIM-Framework-Generator/generate_framework.py
+
+# Generate the GREEN framework with sustainability scoring (V5.0)
+python3 scripts/generate_green_framework_v5.py
+
+# Generate with custom settings
+python3 scripts/generate_green_framework_v5.py --base OPTIM-GREEN --max-segments 5 --top-n 10
+
+# Dry run to preview
+python3 scripts/generate_green_framework_v5.py --dry
+
+# Generate documentation
+python3 scripts/generate_docs.py
+```
+
+### **Framework Generators Available**
+
+| Generator | Version | AMPELs | Domains | Features |
+|-----------|---------|--------|---------|----------|
+| `generate_framework_v10.py` | **V10.0** | **35** | **5** | **Complete OPTIM layers** |
+| `generate_framework.py` | V8.0 | 3 | 1 | External data, validation |
+| `generate_green_framework_v5.py` | V5.0 | 35 | 5 | Sustainability scoring |
+
+### **System Requirements**
+
+- Python 3.8+
+- PyYAML>=6.0
+- **200GB disk space** (V10.0 full framework)
+- **50GB disk space** (V8.0 framework)
+- **10GB disk space** (V5.0 GREEN framework)
+- Git LFS (for large files)
+
+### **V10.0 Framework Scale**
+
+The V10.0 generator creates an **ULTIMATE COMPLETE** structure:
+- **427,135 files** and **223,308 directories**
+- **5 OPTIM layers** × **5 domains** × **35 AMPELs**
+- **15 AMEDEO-PELLICCIA segments** per AMPEL
+- **Variable CAs** per segment, **Variable CIs** per CA
+- **11 lifecycle phases** per CI
+
+### **Configuration**
+
+Edit `config/framework.yaml` to customize:
+- Domain selection  
+- AMPEL subset and green scoring
+- Lifecycle phases
+- Documentation format
+- Green potential thresholds
+
+See `docs/GREEN-FRAMEWORK-USAGE.md` for detailed usage guide.
 
 ---
 
@@ -426,9 +836,12 @@ This framework is proprietary software. See [LICENSE](LICENSE) for details.
 
 | Version | Date | Changes |
 |---------|------|---------|
-| 3.0 | 2025-01 | 43 AMPELs, TRL ordering |
-| 2.0 | 2024-12 | 15 segments, CA/CI structure |
-| 1.0 | 2024-11 | Initial framework |
+| 10.0 | 2025-01 | Complete OPTIM layers, 35 AMPELs, 5 domains |
+| 8.0 | 2024-12 | External data integration, validation |
+| 5.0 | 2024-11 | GREEN framework, sustainability scoring |
+| 3.0 | 2024-10 | 43 AMPELs, TRL ordering |
+| 2.0 | 2024-09 | 15 segments, CA/CI structure |
+| 1.0 | 2024-08 | Initial framework |
 
 ---
 
@@ -466,6 +879,12 @@ This framework is proprietary software. See [LICENSE](LICENSE) for details.
 [![Status](https://img.shields.io/badge/Status-Active-success)]()
 
 </div>
+
+---
+
+# **Aircraft Morphologies Programs Exemplar List**
+## **43 AMPEL Architectures with Accurate Status (2025)**
+
 
 # **Aircraft Morphologies Programs Exemplar List**
 ## **43 AMPEL Architectures with Accurate Status (2025)**

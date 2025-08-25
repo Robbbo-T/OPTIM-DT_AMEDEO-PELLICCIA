@@ -1,0 +1,34 @@
+# Green Framework Configuration
+framework:
+  version: "5.0"
+  focus: "green_potential"
+  
+generation:
+  base_path: "OPTIM-GREEN"
+  max_segments: 5
+  cas_per_segment: 2
+  cis_per_ca: 2
+  top_n_ampels: 10
+  
+domains:
+  - AIR
+  - SPACE  # Future expansion
+  - DEFENSE  # Future expansion
+  
+green_scoring:
+  criteria:
+    decarbonization: 0.30
+    aerodynamic_efficiency: 0.25
+    electrification_potential: 0.20
+    operational_leverage: 0.15
+    certification_maturity: 0.10
+  
+  thresholds:
+    high: 75
+    medium: 60
+    low: 0
+
+output_formats:
+  - yaml
+  - json
+  - markdown
