@@ -327,7 +327,13 @@ Generated: {self.timestamp}
             ca_dir = self.create_dir(seg_dir / f"{ca_id}-{ca_name}")
             
             # Create limited CIs
-            for ci_idx in range(1, min(self.cis_per_ca + 1, 4)):
+        for ca_idx in range(1, min(self.cas_per_segment + 1, self.MAX_CAS_PER_SEGMENT)):
+            ca_id = f"CA-{seg_code}{ca_idx:03d}"
+            ca_name = f"{seg_name}-SUBSYSTEM-{ca_idx}"
+            ca_dir = self.create_dir(seg_dir / f"{ca_id}-{ca_name}")
+            
+            # Create limited CIs
+            for ci_idx in range(1, min(self.cis_per_ca + 1, self.MAX_CIS_PER_CA)):
                 ci_name = f"CI-{seg_code}{ca_idx:03d}-{ci_idx:03d}"
                 self.create_ci_structure(ca_dir / ci_name, ci_name)
             
