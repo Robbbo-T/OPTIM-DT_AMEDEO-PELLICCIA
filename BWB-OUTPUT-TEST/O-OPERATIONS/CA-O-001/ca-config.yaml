@@ -1,0 +1,5 @@
+ca_id: CA-O-001
+name: COCKPIT
+segment: O-OPERATIONS
+ampel: AMPEL-24-BWB
+ci_count: 6

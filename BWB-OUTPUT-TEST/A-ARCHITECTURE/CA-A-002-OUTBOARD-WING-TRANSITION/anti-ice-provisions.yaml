@@ -1,0 +1,11 @@
+interfaces:
+  environmental: bleed_air_electrical
+  energy: power_distribution
+  thermal_expansion: provisions_included
+systems:
+- bleed_air
+- electrical_heating
+zones:
+- leading_edge
+- wing_root
+- transition_area

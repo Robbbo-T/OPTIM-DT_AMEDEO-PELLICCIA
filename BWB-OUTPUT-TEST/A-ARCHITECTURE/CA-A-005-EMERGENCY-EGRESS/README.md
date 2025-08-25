@@ -1,0 +1,6 @@
+# CA-A-005-EMERGENCY-EGRESS: EMERGENCY-EGRESS
+
+## Constituent Assembly
+- Segment: A-ARCHITECTURE
+- AMPEL: AMPEL-24-BWB
+- CIs: 6

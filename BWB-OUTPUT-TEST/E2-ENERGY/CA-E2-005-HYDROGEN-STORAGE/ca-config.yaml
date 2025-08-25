@@ -1,0 +1,5 @@
+ca_id: CA-E2-005-HYDROGEN-STORAGE
+name: HYDROGEN-STORAGE
+segment: E2-ENERGY
+ampel: AMPEL-24-BWB
+ci_count: 5

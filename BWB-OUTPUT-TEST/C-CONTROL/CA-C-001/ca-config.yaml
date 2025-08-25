@@ -1,0 +1,5 @@
+ca_id: CA-C-001
+name: FLIGHT-CONTROLS
+segment: C-CONTROL
+ampel: AMPEL-24-BWB
+ci_count: 5

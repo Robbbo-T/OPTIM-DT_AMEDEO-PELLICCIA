@@ -1,0 +1,5 @@
+ca_id: CA-C-002
+name: ENGINE-CONTROLS
+segment: C-CONTROL
+ampel: AMPEL-24-BWB
+ci_count: 3

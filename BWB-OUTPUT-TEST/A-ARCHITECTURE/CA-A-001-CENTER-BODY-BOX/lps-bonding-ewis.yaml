@@ -1,0 +1,15 @@
+lightning_protection:
+  return_paths:
+  - primary_structure
+  - bonding_straps
+  mass_points:
+  - landing_gear
+  - engine_mounts
+  - wing_tips
+  conductive_mesh: integrated_skin_panels
+ewis_routing:
+  protected_zones:
+  - fuel_areas
+  - engine_compartments
+  separation_requirements: minimum_6_inches
+  shielding: electromagnetic_compatibility

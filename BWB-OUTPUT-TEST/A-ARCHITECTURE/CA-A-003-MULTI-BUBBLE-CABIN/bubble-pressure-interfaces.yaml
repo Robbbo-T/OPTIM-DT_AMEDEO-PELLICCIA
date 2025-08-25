@@ -1,0 +1,15 @@
+pressure_zones:
+  main_cabin:
+    pressure_schedule: 8000ft_equivalent
+    barriers:
+    - forward_bulkhead
+    - aft_bulkhead
+    - floor_barrier
+  cargo_bay:
+    pressure_schedule: unpressurized_vented
+    fire_suppression: halon_replacement
+structural_interfaces:
+- to: PRIMARY-STRUCTURE
+  type: pressure_loads
+- to: EMERGENCY-EGRESS
+  type: blow_out_panels

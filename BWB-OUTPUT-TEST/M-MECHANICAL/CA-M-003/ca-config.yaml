@@ -1,0 +1,5 @@
+ca_id: CA-M-003
+name: ACTUATION
+segment: M-MECHANICAL
+ampel: AMPEL-24-BWB
+ci_count: 6

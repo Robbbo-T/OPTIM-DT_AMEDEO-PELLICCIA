@@ -1,0 +1,5 @@
+ca_id: CA-E2-002
+name: DISTRIBUTION
+segment: E2-ENERGY
+ampel: AMPEL-24-BWB
+ci_count: 6

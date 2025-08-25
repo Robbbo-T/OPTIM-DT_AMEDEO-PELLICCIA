@@ -1,0 +1,6 @@
+# CA-A-001-CENTER-BODY-BOX: CENTER-BODY-BOX
+
+## Constituent Assembly
+- Segment: A-ARCHITECTURE
+- AMPEL: AMPEL-24-BWB
+- CIs: 8

@@ -1,0 +1,6 @@
+# CA-A-003-MULTI-BUBBLE-CABIN: MULTI-BUBBLE-CABIN
+
+## Constituent Assembly
+- Segment: A-ARCHITECTURE
+- AMPEL: AMPEL-24-BWB
+- CIs: 7

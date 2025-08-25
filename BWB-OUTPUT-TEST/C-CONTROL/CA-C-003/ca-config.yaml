@@ -1,0 +1,5 @@
+ca_id: CA-C-003
+name: SYSTEMS-CONTROLS
+segment: C-CONTROL
+ampel: AMPEL-24-BWB
+ci_count: 3

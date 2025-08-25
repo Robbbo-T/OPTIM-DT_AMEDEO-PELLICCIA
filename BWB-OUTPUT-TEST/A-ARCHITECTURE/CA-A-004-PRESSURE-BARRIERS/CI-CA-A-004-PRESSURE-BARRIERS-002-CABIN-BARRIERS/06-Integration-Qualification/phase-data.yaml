@@ -1,0 +1,4 @@
+phase: '06'
+name: Integration-Qualification
+ci: CI-CA-A-004-PRESSURE-BARRIERS-002-CABIN-BARRIERS
+status: active

@@ -1,0 +1,6 @@
+# CA-C2-003: DOCUMENTATION
+
+## Constituent Assembly
+- Segment: C2-CERTIFICATION
+- AMPEL: AMPEL-24-BWB
+- CIs: 2

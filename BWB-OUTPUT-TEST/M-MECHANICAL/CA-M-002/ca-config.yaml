@@ -1,0 +1,5 @@
+ca_id: CA-M-002
+name: HYDRAULICS
+segment: M-MECHANICAL
+ampel: AMPEL-24-BWB
+ci_count: 5

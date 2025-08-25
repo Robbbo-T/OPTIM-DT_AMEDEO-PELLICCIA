@@ -1,0 +1,11 @@
+relief_panels:
+- primary
+- secondary
+- emergency
+ventilation_routes:
+- cabin_to_dry_bay
+- wing_to_fuselage
+dry_bay_protection: positive_pressure_maintenance
+pressure_differential_limits:
+  normal: 8.5_psi
+  emergency: 12.0_psi

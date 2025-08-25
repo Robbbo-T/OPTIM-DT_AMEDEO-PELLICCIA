@@ -1,0 +1,6 @@
+# CA-A-004-PRESSURE-BARRIERS: PRESSURE-BARRIERS
+
+## Constituent Assembly
+- Segment: A-ARCHITECTURE
+- AMPEL: AMPEL-24-BWB
+- CIs: 6
