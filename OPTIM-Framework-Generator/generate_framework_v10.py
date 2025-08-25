@@ -90,7 +90,7 @@ class OPTIMUltimateFramework:
             ("26", "OW", "Oblique Wing", "AD-1"),
             ("27", "DP", "Distributed Propulsion", "X-57"),
             ("28", "TILTWING", "Tiltwing", "CL-84"),
-            ("29", "CYCLOGYRO", "Cyclogyro", "CycloTech"),
+            ("29", "HE", "Hybrid-Electric (eSTOL/Regional)", "Electra.aero"),
             ("30", "HYPERSONIC", "Hypersonic", "X-43A"),
             ("31", "TAILSITTER", "Tailsitter", "XFY Pogo"),
             ("32", "JW", "Joined Wing", "SensorCraft"),
@@ -247,6 +247,88 @@ class OPTIMUltimateFramework:
             "CA-E2-005-HYDROGEN-STORAGE": [
                 "LH2-TANKS-STRUCT-MOUNTS", "INSULATION-VACUUM-PANELS", "VENT-BOILOFF-DUCTS",
                 "CRASH-LOAD-PATHS", "LEAK-DETECTION-BAYS"
+            ]
+        }
+        
+        # SPECIALIZED CA STRUCTURE FOR AMPEL-29-HE (Hybrid-Electric)
+        self.ampel_29_he_ca_structure = {
+            "A-ARCHITECTURE": [
+                ("CA-A-001", "BATTERY-MOUNTS", 8),
+                ("CA-A-002", "HV-ROUTING-STRUCTURE", 6),
+                ("CA-A-003", "VENT-FIREWALLS", 5)
+            ],
+            "M-MECHANICAL": [
+                ("CA-M-001", "THERMAL-LOOPS", 5),
+                ("CA-M-002", "COUPLINGS-MOUNTS", 4),
+                ("CA-M-003", "CHARGING-PORT-MECH", 3)
+            ],
+            "E-ENVIRONMENTAL": [
+                ("CA-E-001", "BATTERY-THERMAL-MGMT", 6),
+                ("CA-E-002", "CABIN-EMERGENCY-VENT", 4),
+                ("CA-E-003", "ICE-PROTECTION", 5)
+            ],
+            "D-DIGITAL": [
+                ("CA-D-001", "ENERGY-MGMT-CONTROLLER", 7),
+                ("CA-D-002", "POWERTRAIN-CONTROLLER", 6),
+                ("CA-D-003", "FAULT-DIAGNOSTICS", 5)
+            ],
+            "E2-ENERGY": [
+                ("CA-E2-001", "ENERGY-STORAGE", 8),
+                ("CA-E2-002", "POWER-GENERATION", 6),
+                ("CA-E2-003", "HV-DISTRIBUTION", 7),
+                ("CA-E2-004", "CHARGING", 5),
+                ("CA-E2-005", "ISOLATION-PROTECTION", 4)
+            ],
+            "O-OPERATIONS": [
+                ("CA-O-001", "OPS-PROCEDURES", 4),
+                ("CA-O-002", "MAINTENANCE-PROCEDURES", 5),
+                ("CA-O-003", "EMERGENCY-PROCEDURES", 6)
+            ],
+            "P-PROPULSION": [
+                ("CA-P-001", "ELECTRIC-PROPULSORS", 8),
+                ("CA-P-002", "INVERTERS-DRIVES", 6),
+                ("CA-P-003", "REDUCTION-DRIVE", 4),
+                ("CA-P-004", "GENERATOR-INTERFACE", 5)
+            ],
+            "E3-ELECTRONICS": [
+                ("CA-E3-001", "HV-SENSING-PROTECTION", 5),
+                ("CA-E3-002", "AVIONICS-INTERFACES", 4),
+                ("CA-E3-003", "ANTENNAS-TELEMETRY", 3)
+            ],
+            "L-LOGISTICS": [
+                ("CA-L-001", "SPARES-BATTERY-MODULES", 4),
+                ("CA-L-002", "TOOLING-HV-SAFETY", 3),
+                ("CA-L-003", "HAZMAT-HANDLING", 3)
+            ],
+            "L2-LINKS": [
+                ("CA-L2-001", "POWERTRAIN-NETWORK", 4),
+                ("CA-L2-002", "VEHICLE-DATABUS", 3),
+                ("CA-L2-003", "GROUND-COMMS", 2)
+            ],
+            "I-INTEGRATION": [
+                ("CA-I-001", "EMI-EMC-TEST", 3),
+                ("CA-I-002", "HV-ISOLATION-TEST", 4),
+                ("CA-I-003", "SYSTEMS-INTEGRATION", 5)
+            ],
+            "C-CONTROL": [
+                ("CA-C-001", "POWER-LIMITING-MODES", 4),
+                ("CA-C-002", "FAULT-RIDE-THROUGH", 3),
+                ("CA-C-003", "REVERSION-STRATEGIES", 3)
+            ],
+            "C2-CERTIFICATION": [
+                ("CA-C2-001", "DO-311A-BATTERIES", 4),
+                ("CA-C2-002", "DO-160-ENV-TESTS", 3),
+                ("CA-C2-003", "CS-23-25-SPECIAL-CONDITIONS", 3)
+            ],
+            "I2-INTELLIGENCE": [
+                ("CA-I2-001", "ENERGY-ROUTING-OPTIMIZER", 3),
+                ("CA-I2-002", "PREDICTIVE-SOH-SOC", 3),
+                ("CA-I2-003", "FLEET-OPTIMIZATION", 2)
+            ],
+            "A2-AIRPORTS": [
+                ("CA-A2-001", "CHARGING-INFRASTRUCTURE", 3),
+                ("CA-A2-002", "ENERGY-DEPOT", 2),
+                ("CA-A2-003", "SAFETY-ZONES", 2)
             ]
         }
         
@@ -481,8 +563,63 @@ class OPTIMUltimateFramework:
         """Generate COMPLETE AMPEL with all segments, CAs, CIs, and phases"""
         self.create_dir(ampel_path)
         
-        # AMPEL documentation
-        self.create_file(ampel_path / "README.md", f"""# {ampel_id}: {ampel_name}
+        # AMPEL documentation - customize for special AMPELs
+        if "AMPEL-24-BWB" in ampel_id:
+            readme_content = f"""# {ampel_id}: {ampel_name}
+
+## Domain: {domain}
+## Examples: {ampel_examples}
+
+* **Status**: DEVELOPMENT | **TRL**: 6
+* **Green Potential**: ♻️ *High* (85% - aerodynamic efficiency)
+* **Drivers**: efficiency, hydrogen_volume, low_noise
+* **Retrofit**: Low | **Cert risk**: High | **Infra**: Medium
+
+## Structure
+- **Segments**: 15 (AMEDEO-PELLICCIA)
+- **Constituent Assemblies (CAs)**: Specialized for BWB configuration
+- **Configuration Items (CIs)**: Variable per CA with multi-bubble pressurization
+- **Lifecycle Phases**: 11 (UTCS)
+
+## BWB Specific Features
+- Center body box primary structure
+- Multi-bubble cabin design for pressure containment
+- Integrated wing-body for optimal lift distribution
+- Hydrogen storage provisions for ZEROe variants
+- Novel emergency egress solutions
+
+## Technical Configuration
+Generated: {self.timestamp}
+"""
+        elif "AMPEL-29-HE" in ampel_id:
+            readme_content = f"""# {ampel_id}: {ampel_name}
+
+## Domain: {domain}
+## Examples: {ampel_examples}
+
+* **Status**: DEVELOPMENT | **TRL**: 5–6
+* **Green Potential**: ♻️ *High* (eSTOL/HE regional).
+* **Drivers**: electrification, efficiency, ruido bajo, infra modular.
+* **Retrofit**: Medio/Alto | **Cert risk**: Medio | **Infra**: Baja–Media.
+
+## Structure
+- **Segments**: 15 (AMEDEO-PELLICCIA)
+- **Constituent Assemblies (CAs)**: Specialized for hybrid-electric systems
+- **Configuration Items (CIs)**: Variable per CA with HV safety focus
+- **Lifecycle Phases**: 11 (UTCS)
+
+## Hybrid-Electric Specific Features
+- Battery energy storage systems with thermal management
+- High voltage (HV) distribution and safety systems
+- Electric propulsion with turbogenerator backup
+- Charging infrastructure interfaces
+- Specialized certification compliance (DO-311A, DO-160, CS-23/25)
+
+## Technical Configuration
+Generated: {self.timestamp}
+"""
+        else:
+            readme_content = f"""# {ampel_id}: {ampel_name}
 
 ## Domain: {domain}
 ## Examples: {ampel_examples}
@@ -495,11 +632,13 @@ class OPTIMUltimateFramework:
 
 ## Technical Configuration
 Generated: {self.timestamp}
-""")
+"""
         
-        # AMPEL configuration - use BWB-specific config for AMPEL-24-BWB
-        if ampel_id == "AMPEL-24-BWB":
-            ampel_config = {
+        self.create_file(ampel_path / "README.md", readme_content)
+        
+        # AMPEL configuration - customize for special AMPELs
+        if "AMPEL-24-BWB" in ampel_id:
+            config_data = {
                 "ampel_id": ampel_id,
                 "name": "Blended Wing Body",
                 "domain": domain,
@@ -517,8 +656,27 @@ Generated: {self.timestamp}
                 "segments": [seg_name for _, seg_name, _ in self.segments],
                 "created": self.timestamp
             }
+        elif "AMPEL-29-HE" in ampel_id:
+            config_data = {
+                "ampel_id": ampel_id,
+                "name": ampel_name,
+                "domain": domain,
+                "trl": "5-6",
+                "status": "DEVELOPMENT",
+                "examples": [ampel_examples],
+                "green_potential": {
+                    "score": 77,
+                    "class": "High",
+                    "drivers": ["electrification", "short_field", "quiet"]
+                },
+                "retrofit_feasibility": "Medium",
+                "certification_risk": "Medium", 
+                "infrastructure_impact": "Low",
+                "segments": [seg_name for _, seg_name, _ in self.segments],
+                "created": self.timestamp
+            }
         else:
-            ampel_config = {
+            config_data = {
                 "ampel_id": ampel_id,
                 "name": ampel_name,
                 "domain": domain,
@@ -527,7 +685,7 @@ Generated: {self.timestamp}
                 "created": self.timestamp
             }
         
-        self.create_yaml(ampel_path / "ampel-config.yaml", ampel_config)
+        self.create_yaml(ampel_path / "ampel-config.yaml", config_data)
         
         # Generate ALL 15 SEGMENTS
         for seg_letter, seg_name, seg_desc in self.segments:
@@ -543,9 +701,15 @@ Generated: {self.timestamp}
 ## Domain: {domain}
 """)
             
-            # Get CAs for this segment - use BWB-specific structure for AMPEL-24-BWB
-            if ampel_id == "AMPEL-24-BWB" and segment_id in self.bwb_ca_structure:
+            # Get CAs for this segment - use specialized structures for special AMPELs
+            if "AMPEL-24-BWB" in ampel_id and segment_id in self.bwb_ca_structure:
                 cas_for_segment = self.bwb_ca_structure[segment_id]
+            elif "AMPEL-29-HE" in ampel_id:
+                cas_for_segment = self.ampel_29_he_ca_structure.get(segment_id, [
+                    (f"CA-{seg_letter}-001", f"{seg_name}-PRIMARY", 5),
+                    (f"CA-{seg_letter}-002", f"{seg_name}-SECONDARY", 4),
+                    (f"CA-{seg_letter}-003", f"{seg_name}-AUXILIARY", 3)
+                ])
             else:
                 cas_for_segment = self.ca_structure.get(segment_id, [
                     (f"CA-{seg_letter}-001", f"{seg_name}-PRIMARY", 5),
@@ -576,7 +740,7 @@ Generated: {self.timestamp}
                 # Generate CIs for this CA
                 for ci_num in range(1, ci_count + 1):
                     # Use BWB-specific CI naming for AMPEL-24-BWB
-                    if ampel_id == "AMPEL-24-BWB" and ca_id in self.bwb_ci_names:
+                    if "AMPEL-24-BWB" in ampel_id and ca_id in self.bwb_ci_names:
                         ci_names = self.bwb_ci_names[ca_id]
                         if ci_num <= len(ci_names):
                             ci_suffix = ci_names[ci_num - 1]
@@ -628,7 +792,120 @@ Generated: {self.timestamp}
             
             self.stats['segments'] += 1
         
+        # Generate specialized interfaces for special AMPELs
+        if "AMPEL-24-BWB" in ampel_id:
+            self.generate_bwb_interfaces(ampel_path, ampel_id)
+        elif "AMPEL-29-HE" in ampel_id:
+            self.generate_ampel_29_he_interfaces(ampel_path, ampel_id)
+        
         self.stats['ampels'] += 1
+
+    def generate_bwb_interfaces(self, ampel_path, ampel_id):
+        """Generate specialized interface files for AMPEL-24-BWB"""
+        
+        # Multi-bubble cabin pressure interfaces
+        a_path = ampel_path / "A-ARCHITECTURE" / "CA-A-003-MULTI-BUBBLE-CABIN"
+        if not self.dry:
+            a_path.mkdir(parents=True, exist_ok=True)
+        
+        self.create_yaml(a_path / "bubble-pressure-interfaces.yaml", {
+            "pressure_zones": {
+                "main_cabin": {
+                    "pressure_schedule": "8000ft_equivalent",
+                    "barriers": ["forward_bulkhead", "aft_bulkhead", "floor_barrier"]
+                },
+                "cargo_bay": {
+                    "pressure_schedule": "unpressurized_vented",
+                    "fire_suppression": "halon_replacement"
+                }
+            },
+            "structural_interfaces": [
+                {"to": "PRIMARY-STRUCTURE", "type": "pressure_loads"},
+                {"to": "EMERGENCY-EGRESS", "type": "blow_out_panels"}
+            ]
+        })
+        
+        # Hydrogen storage for ZEROe variant
+        e2_path = ampel_path / "E2-ENERGY" / "CA-E2-005-HYDROGEN-STORAGE"
+        if not self.dry:
+            e2_path.mkdir(parents=True, exist_ok=True)
+        
+        self.create_yaml(e2_path / "lh2-storage-interfaces.yaml", {
+            "tank_configuration": {
+                "type": "integral_cryogenic",
+                "location": "rear_center_body",
+                "capacity": "100kg_LH2",
+                "insulation": "vacuum_multilayer"
+            },
+            "safety_systems": {
+                "boiloff_management": "catalytic_recombiner",
+                "leak_detection": "hydrogen_sensors",
+                "emergency_venting": "roof_mounted"
+            },
+            "interfaces": [
+                {"to": "FUEL-SYSTEMS", "type": "feed_lines"},
+                {"to": "ENVIRONMENTAL", "type": "inerting_system"}
+            ]
+        })
+
+    def generate_ampel_29_he_interfaces(self, ampel_path, ampel_id):
+        """Generate specialized interface files for AMPEL-29-HE"""
+        
+        # HV Safety interfaces for E2-ENERGY/CA-E2-001-ENERGY-STORAGE
+        e2_path = ampel_path / "E2-ENERGY" / "CA-E2-001"
+        if not self.dry:
+            e2_path.mkdir(parents=True, exist_ok=True)
+        
+        self.create_yaml(e2_path / "interfaces-to-enr-ele.yaml", {
+            "fuel_system_safety": {
+                "inerting_system": {
+                    "interface_to": "ENV-ENVIRONMENTAL",
+                    "provisions": ["vent_paths", "fire_barriers"]
+                }
+            },
+            "lightning_protection": {
+                "interface_to": "ELE-ELECTRONICS",
+                "provisions": ["panel_bonding", "probe_shielding"]
+            },
+            "hv_safety": {
+                "interface_to": "ENR-ENERGY", 
+                "provisions": ["IMD", "contactor_interlocks", "HVIL", "fuses"]
+            },
+            "compliance": ["DO-311A", "DO-160", "FAR_25_981(SFAR88)"]
+        })
+        
+        # LPS bonding interfaces for A-ARCHITECTURE/CA-A-002
+        a_path = ampel_path / "A-ARCHITECTURE" / "CA-A-002"
+        if not self.dry:
+            a_path.mkdir(parents=True, exist_ok=True)
+            
+        self.create_yaml(a_path / "lps-bonding-ewis-interfaces.yaml", {
+            "lps_bonding": {
+                "primary_paths": ["wing_root_bonds", "tail_bond_jumpers"],
+                "secondary_paths": ["conductive_sealant", "mesh_integration"]
+            },
+            "ewis_structural_bonds": ["ground_studs", "bond_straps", "cable_tray_grounding"],
+            "interfaces": [
+                {"to": "ELE-ELECTRONICS", "type": "lightning_protection"},
+                {"to": "ENR-ENERGY", "type": "electrical_bonding"}
+            ]
+        })
+        
+        # Anti-ice provisions for E-ENVIRONMENTAL/CA-E-003
+        e_path = ampel_path / "E-ENVIRONMENTAL" / "CA-E-003"
+        if not self.dry:
+            e_path.mkdir(parents=True, exist_ok=True)
+            
+        self.create_yaml(e_path / "anti-ice-provisions.yaml", {
+            "structural_provisions": {
+                "electric_heating": ["heater_mat_bonding", "cable_routing", "temp_sensors"],
+                "hot_bleed_air": ["piccolo_provisions"]
+            },
+            "interfaces": [
+                {"to": "ENR-ENERGY", "type": "electrical_power"},
+                {"to": "ENV-ENVIRONMENTAL", "type": "bleed_air_ducting"}
+            ]
+        })
 
     def generate_i_intelligent(self):
         """Generate I-INTELLIGENT layer"""
@@ -725,6 +1002,18 @@ Generated: {self.timestamp}
 - **Files Created**: {self.stats['files']}
 - **Directories Created**: {self.stats['directories']}
 
+## Special AMPEL Configurations
+
+### AMPEL-24-BWB (Blended Wing Body)
+- **TRL**: 6
+- **Green Score**: 85%
+- **Features**: Multi-bubble cabin, hydrogen storage provisions, integrated wing-body
+
+### AMPEL-29-HE (Hybrid-Electric)
+- **TRL**: 5-6
+- **Green Score**: 77%
+- **Features**: Battery systems, HV distribution, charging infrastructure
+
 ## Layer Structure
 
 ### O - ORGANIZATIONAL
@@ -816,6 +1105,10 @@ STRUCTURE GENERATED:
         └── CROSS/ (10 AMPELs)
   I-INTELLIGENT/
   M-MACHINE/
+  
+SPECIAL AMPEL CONFIGURATIONS:
+  ✅ AMPEL-24-BWB: Blended Wing Body with hydrogen provisions
+  ✅ AMPEL-29-HE: Hybrid-Electric with HV safety systems
 """)
         print("="*100)
 

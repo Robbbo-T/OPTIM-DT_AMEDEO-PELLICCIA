@@ -1,3 +1,10 @@
+# Generated framework structure
+03-TECHNICAL-AMEDEO-PELLICCIA/*/
+OPTIM-GREEN*/
+SHOWCASE*/
+OPTIM-COMPLETE-V10/
+OPTIM-FRAMEWORK/
+
 # Python
 __pycache__/
 *.py[cod]
@@ -19,6 +26,7 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 
 # Virtual environments
 .env
@@ -36,11 +44,26 @@ venv.bak/
 *.swo
 *~
 
-# Generated framework outputs (except for demos)
-OPTIM-COMPLETE-V10/
-OPTIM-FRAMEWORK/
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing and coverage
+.pytest_cache/
+.coverage
+*.log
 
 # Temporary files
 *.tmp
 *.temp
 /tmp/
+
+# Configuration overrides
+config/local.yaml
+config/development.yaml
+
+# Generated documentation (keep docs/ but exclude auto-generated if needed)
+# docs/generated/
+
+# Keep documentation examples
+!docs/examples/
