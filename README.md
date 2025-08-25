@@ -306,6 +306,9 @@ python3 OPTIM-Framework-Generator/generate_framework_v10.py --dry
 # Generate V8.0 legacy framework
 python3 OPTIM-Framework-Generator/generate_framework.py
 
+# Generate V7.0 framework (if available)
+python3 scripts/generate_framework_v7.py
+
 # Generate the GREEN framework with sustainability scoring (V5.0)
 python3 scripts/generate_green_framework_v5.py
 
