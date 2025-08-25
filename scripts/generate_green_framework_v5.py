@@ -396,7 +396,7 @@ Generated: {self.timestamp}
         })
         
         # Create limited segments
-        for seg_code, seg_name in self.segments[:min(self.max_segments, 5)]:
+        for seg_code, seg_name in self.segments[:min(self.max_segments, self.SEGMENT_LIMIT)]:
             segment_dir = f"{seg_code}-{seg_name}"
             self.create_segment_structure(ampel_dir / segment_dir, seg_code, seg_name)
         
