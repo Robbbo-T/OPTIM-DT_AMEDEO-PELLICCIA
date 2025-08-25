@@ -1,0 +1,5 @@
+ca_id: CA-E2-003
+name: STORAGE
+segment: E2-ENERGY
+ampel: AMPEL-24-BWB
+ci_count: 4

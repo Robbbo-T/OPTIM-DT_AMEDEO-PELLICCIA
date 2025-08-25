@@ -1,0 +1,5 @@
+ca_id: CA-L2-003
+name: WIRELESS
+segment: L2-LINKS
+ampel: AMPEL-24-BWB
+ci_count: 2

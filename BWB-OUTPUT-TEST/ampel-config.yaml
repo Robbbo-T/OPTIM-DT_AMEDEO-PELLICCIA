@@ -1,0 +1,35 @@
+ampel_id: AMPEL-24-BWB
+name: Blended Wing Body
+domain: AIR
+examples:
+- JetZero BWB
+- Airbus MAVERIC
+trl: 6
+status: DEVELOPMENT
+green_potential:
+  score: 85
+  class: High
+  drivers:
+  - efficiency
+  - hydrogen_volume
+  - low_noise
+  retrofit_feasibility: Low
+  certification_risk: High
+  infrastructure_impact: Medium
+segments:
+- ARCHITECTURE
+- MECHANICAL
+- ENVIRONMENTAL
+- DIGITAL
+- ENERGY
+- OPERATIONS
+- PROPULSION
+- ELECTRONICS
+- LOGISTICS
+- LINKS
+- INTEGRATION
+- CONTROL
+- CERTIFICATION
+- INTELLIGENCE
+- AIRPORTS
+created: 2025-08-25 22:22:30 UTC

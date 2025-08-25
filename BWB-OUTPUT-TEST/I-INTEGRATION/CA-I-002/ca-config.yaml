@@ -1,0 +1,5 @@
+ca_id: CA-I-002
+name: TESTING
+segment: I-INTEGRATION
+ampel: AMPEL-24-BWB
+ci_count: 2

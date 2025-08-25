@@ -1,0 +1,14 @@
+tank_configuration:
+  type: integral_cryogenic
+  location: rear_center_body
+  capacity: 100kg_LH2
+  insulation: vacuum_multilayer
+safety_systems:
+  boiloff_management: catalytic_recombiner
+  leak_detection: hydrogen_sensors
+  emergency_venting: roof_mounted
+interfaces:
+- to: FUEL-SYSTEMS
+  type: feed_lines
+- to: ENVIRONMENTAL
+  type: inerting_system

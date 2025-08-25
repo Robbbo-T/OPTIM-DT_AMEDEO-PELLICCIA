@@ -1,0 +1,5 @@
+ca_id: CA-A-005-EMERGENCY-EGRESS
+name: EMERGENCY-EGRESS
+segment: A-ARCHITECTURE
+ampel: AMPEL-24-BWB
+ci_count: 6
