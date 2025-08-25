@@ -39,9 +39,6 @@ venv.bak/
 # Generated framework outputs (except for demos)
 OPTIM-COMPLETE-V10/
 OPTIM-FRAMEWORK/
-AMPEL-*-EXAMPLE/
-test-output/
-test-framework/
 
 # Temporary files
 *.tmp
