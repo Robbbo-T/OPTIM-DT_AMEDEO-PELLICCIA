@@ -780,7 +780,7 @@ class OPTIMFrameworkComplete:
                 json.dump(stats, f, indent=2)
         
         self.stats = stats
-        print(f"  ✓ Statistics generated")
+        print("  ✓ Statistics generated")
     
     def _print_statistics(self):
         """Print final statistics"""
