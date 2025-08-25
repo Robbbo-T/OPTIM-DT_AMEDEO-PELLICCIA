@@ -257,7 +257,7 @@ class DocumentationGenerator:
         docs_dir = self.base_path / "docs"
         cert_path = docs_dir / "certification.md"
         
-        with open(cert_path, 'w') as f:
+        with open(cert_path, 'w', encoding='utf_8') as f:
             f.write("# OPTIM-DT Framework Certification Guide\n\n")
             f.write(f"Generated: {self.timestamp}\n\n")
             
