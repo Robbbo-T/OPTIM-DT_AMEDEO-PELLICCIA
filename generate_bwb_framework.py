@@ -20,7 +20,7 @@ class BWBFrameworkGenerator:
     Specialized generator for BWB AMPEL-24-BWB framework
     """
     
-    def __init__(self, base_path="T-TECHNICAL/AMEDEO-PELLICCIA/AIR/AMPEL-24-BWB"):
+    def __init__(self, base_path="T-TECHNICAL/AIR/AMPEL-BWB"):
         self.base_path = Path(base_path)
         self.timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S UTC")
         
@@ -52,7 +52,7 @@ class BWBFrameworkGenerator:
         self.create_dir(self.base_path)
         
         # Generate main README
-        self.create_file(self.base_path / "README.md", f"""# AMPEL-24-BWB: Blended Wing Body
+        self.create_file(self.base_path / "README.md", f"""# AMPEL-BWB: Blended Wing Body
 
 ## Domain: AIR
 ## Examples: JetZero BWB, Airbus MAVERIC
@@ -75,7 +75,7 @@ Generated: {self.timestamp}
 
         # Generate BWB-specific ampel-config.yaml
         ampel_config = {
-            "ampel_id": "AMPEL-24-BWB",
+            "ampel_id": "AMPEL-BWB",
             "name": "Blended Wing Body",
             "domain": "AIR",
             "examples": ["JetZero BWB", "Airbus MAVERIC"],
@@ -114,7 +114,7 @@ Generated: {self.timestamp}
         generator = OPTIMUltimateFramework(base_path=str(self.base_path.parent.parent.parent.parent), dry=False)
         generator.generate_complete_ampel(
             self.base_path,
-            "AMPEL-24-BWB",
+            "AMPEL-BWB",
             "Blended Wing Body", 
             "JetZero BWB, Airbus MAVERIC",
             "AIR"
@@ -221,7 +221,7 @@ def main():
     
     parser = argparse.ArgumentParser(description="BWB AMPEL-24-BWB Framework Generator")
     parser.add_argument("--base", default=".", help="Base directory")
-    parser.add_argument("--output", default="T-TECHNICAL/AMEDEO-PELLICCIA/AIR/AMPEL-24-BWB", 
+    parser.add_argument("--output", default="T-TECHNICAL/AIR/AMPEL-BWB", 
                        help="Output directory for BWB framework")
     
     args = parser.parse_args()
