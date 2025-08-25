@@ -51,7 +51,7 @@ class DocumentationGenerator:
         docs_dir = self.base_path / "docs"
         overview_path = docs_dir / "framework_overview.md"
         
-        with open(overview_path, 'w') as f:
+        with open(overview_path, 'w', encoding='utf_8') as f:
             f.write("# OPTIM-DT AMEDEO-PELLICCIA Framework Overview\n\n")
             f.write(f"Generated: {self.timestamp}\n\n")
             f.write("## Introduction\n\n")
