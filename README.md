@@ -267,7 +267,7 @@ git clone https://github.com/your-org/OPTIM-DT_AMEDEO-PELLICCIA.git
 cd OPTIM-DT_AMEDEO-PELLICCIA
 
 # Generate the complete framework structure
-python3 scripts/generate_framework_v3.py
+python3 scripts/generate_framework_v7.py
 
 # Verify the structure
 python3 scripts/verify_structure.py
