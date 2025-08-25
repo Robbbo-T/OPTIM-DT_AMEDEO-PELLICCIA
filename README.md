@@ -1,7 +1,3 @@
-Below is a fully corrected, self‑consistent README you can drop in as `README.md`. I fixed all number inconsistencies (now **43 AMPELs** end‑to‑end), removed duplicated headers, corrected mis-typed IDs, and aligned every count and reference. I also replaced contradictory domain counts with a clean, configurable mapping note and recalculated the framework scale for **43** AMPELs.
-
----
-
 # **OPTIM-DT\_AMEDEO-PELLICCIA Framework**
 
 ## **Organizational, Procedural, Technical, Intelligent Machine as Digital Twin**
