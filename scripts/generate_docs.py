@@ -199,7 +199,7 @@ class DocumentationGenerator:
         docs_dir = self.base_path / "docs"
         bp_path = docs_dir / "best_practices.md"
         
-        with open(bp_path, 'w') as f:
+        with open(bp_path, 'w', encoding='utf_8') as f:
             f.write("# OPTIM-DT Framework Best Practices\n\n")
             f.write(f"Generated: {self.timestamp}\n\n")
             
