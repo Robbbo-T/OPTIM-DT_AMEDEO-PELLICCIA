@@ -784,7 +784,7 @@ class OPTIMFrameworkComplete:
     
     def _print_statistics(self):
         """Print final statistics"""
-        print(f"\n📊 FRAMEWORK STATISTICS")
+        print("\n📊 FRAMEWORK STATISTICS")
         print("=" * 50)
         print(f"AMPELs:              {self.stats['ampels']:,}")
         print(f"Segments:            {self.stats['segments']:,}")
