@@ -1,0 +1,22 @@
+ampel_id: AMPEL-01-DP
+description: Distributed Propulsion
+trl: 6
+status: DEVELOPMENT
+active_programs:
+- X-57
+- Lilium
+- Electra
+green_potential:
+  score: 88
+  class: High
+  emoji: ♻️
+  drivers:
+  - electrification
+  - efficiency
+  - noise_reduction
+  retrofit_feasibility: Medium
+  certification_risk: Medium
+  infrastructure_impact: Low
+segments:
+- ARC-ARCHITECTURE
+- MEC-MECHANICAL

@@ -1,0 +1,530 @@
+total_ampels: 35
+high_potential: 8
+medium_potential: 16
+low_potential: 11
+ampels:
+- id: AMPEL-01-DP
+  name: Distributed Propulsion
+  trl: 6
+  status: DEVELOPMENT
+  programs: X-57, Lilium, Electra
+  green_potential:
+    score: 88
+    class: High
+    drivers:
+    - electrification
+    - efficiency
+    - noise_reduction
+    retrofit_feasibility: Medium
+    certification_risk: Medium
+    infrastructure_impact: Low
+- id: AMPEL-02-BWB
+  name: Blended Wing Body
+  trl: 6
+  status: DEVELOPMENT
+  programs: JetZero, MAVERIC
+  green_potential:
+    score: 85
+    class: High
+    drivers:
+    - efficiency
+    - hydrogen_volume
+    - low_noise
+    retrofit_feasibility: Low
+    certification_risk: High
+    infrastructure_impact: Medium
+- id: AMPEL-03-TBW
+  name: Truss-Braced Wing
+  trl: 6
+  status: DEVELOPMENT
+  programs: X-66A, NASA TTBW
+  green_potential:
+    score: 82
+    class: High
+    drivers:
+    - efficiency
+    - electrification
+    - structure
+    retrofit_feasibility: Medium
+    certification_risk: Medium
+    infrastructure_impact: Low
+- id: AMPEL-04-HYDROGEN-TUBE
+  name: Hydrogen Tube Wing
+  trl: 5
+  status: DEVELOPMENT
+  programs: ZeroAvia, Airbus ZEROe
+  green_potential:
+    score: 80
+    class: High
+    drivers:
+    - zero_emission
+    - existing_infra
+    - scalability
+    retrofit_feasibility: Low
+    certification_risk: High
+    infrastructure_impact: Medium
+- id: AMPEL-05-HYDROGEN-BWB
+  name: Hydrogen BWB
+  trl: 5
+  status: DEVELOPMENT
+  programs: Airbus ZEROe BWB
+  green_potential:
+    score: 78
+    class: High
+    drivers:
+    - zero_emission
+    - efficiency
+    - volume
+    retrofit_feasibility: Low
+    certification_risk: High
+    infrastructure_impact: High
+- id: AMPEL-06-eSTOL
+  name: Electric STOL
+  trl: 5
+  status: DEVELOPMENT
+  programs: Electra.aero
+  green_potential:
+    score: 77
+    class: High
+    drivers:
+    - electrification
+    - short_field
+    - quiet
+    retrofit_feasibility: Medium
+    certification_risk: Medium
+    infrastructure_impact: Low
+- id: AMPEL-07-ELECTRIC-ROTARY
+  name: Electric Rotary Wing
+  trl: 8
+  status: DEVELOPMENT
+  programs: Joby, Archer
+  green_potential:
+    score: 76
+    class: High
+    drivers:
+    - zero_emission_local
+    - urban
+    - modular
+    retrofit_feasibility: High
+    certification_risk: Low
+    infrastructure_impact: Medium
+- id: AMPEL-08-SOLAR
+  name: Solar Powered
+  trl: 7
+  status: OPERATIONAL
+  programs: Zephyr S
+  green_potential:
+    score: 75
+    class: High
+    drivers:
+    - zero_emission
+    - persistence
+    - HAPS
+    retrofit_feasibility: Low
+    certification_risk: Low
+    infrastructure_impact: High
+- id: AMPEL-29-BLI
+  name: Boundary Layer Ingestion
+  trl: 4
+  status: RESEARCH
+  programs: STARC-ABL
+  green_potential:
+    score: 74
+    class: Medium
+    drivers:
+    - efficiency
+    - integration
+    - propulsion
+    retrofit_feasibility: Low
+    certification_risk: High
+    infrastructure_impact: Medium
+- id: AMPEL-27-BW
+  name: Box Wing
+  trl: 4
+  status: RESEARCH
+  programs: PrandtlPlane
+  green_potential:
+    score: 73
+    class: Medium
+    drivers:
+    - efficiency
+    - capacity
+    - stability
+    retrofit_feasibility: Low
+    certification_risk: High
+    infrastructure_impact: Medium
+- id: AMPEL-10-ELECTRIC-FIXED
+  name: Electric Fixed Wing
+  trl: 9
+  status: PRODUCTION
+  programs: Velis Electro
+  green_potential:
+    score: 72
+    class: Medium
+    drivers:
+    - zero_emission
+    - training
+    - short_range
+    retrofit_feasibility: High
+    certification_risk: Low
+    infrastructure_impact: Low
+- id: AMPEL-26-JW
+  name: Joined Wing
+  trl: 4
+  status: RESEARCH
+  programs: NASA SensorCraft
+  green_potential:
+    score: 71
+    class: Medium
+    drivers:
+    - efficiency
+    - structure
+    - sensors
+    retrofit_feasibility: Low
+    certification_risk: High
+    infrastructure_impact: Medium
+- id: AMPEL-16-STOL
+  name: Short Take-Off and Landing
+  trl: 9
+  status: PRODUCTION
+  programs: Twin Otter, Kodiak
+  green_potential:
+    score: 70
+    class: Medium
+    drivers:
+    - hybrid_ready
+    - remote_ops
+    - efficiency
+    retrofit_feasibility: High
+    certification_risk: Low
+    infrastructure_impact: Low
+- id: AMPEL-28-MW
+  name: Morphing Wing
+  trl: 3
+  status: RESEARCH
+  programs: NASA MADCAT
+  green_potential:
+    score: 69
+    class: Medium
+    drivers:
+    - adaptive
+    - efficiency
+    - materials
+    retrofit_feasibility: Low
+    certification_risk: High
+    infrastructure_impact: High
+- id: AMPEL-09-TUW
+  name: Tube-and-Wing
+  trl: 9
+  status: PRODUCTION
+  programs: A320neo, 737MAX, A350
+  green_potential:
+    score: 68
+    class: Medium
+    drivers:
+    - SAF_ready
+    - retrofit_easy
+    - mature
+    retrofit_feasibility: High
+    certification_risk: Low
+    infrastructure_impact: Low
+- id: AMPEL-31-MODULAR
+  name: Modular Reconfigurable
+  trl: 3
+  status: RESEARCH
+  programs: Clip-Air
+  green_potential:
+    score: 67
+    class: Medium
+    drivers:
+    - flexibility
+    - utilization
+    - concept
+    retrofit_feasibility: Low
+    certification_risk: High
+    infrastructure_impact: High
+- id: AMPEL-18-TILTROTOR
+  name: Tiltrotor
+  trl: 9
+  status: PRODUCTION
+  programs: V-22, V-280, AW609
+  green_potential:
+    score: 66
+    class: Medium
+    drivers:
+    - speed
+    - versatility
+    - hybrid_future
+    retrofit_feasibility: Low
+    certification_risk: Medium
+    infrastructure_impact: Low
+- id: AMPEL-11-HYBRID-AIRSHIP
+  name: Hybrid Airship
+  trl: 7
+  status: DEVELOPMENT
+  programs: LMH-1, LCA60T
+  green_potential:
+    score: 65
+    class: Medium
+    drivers:
+    - efficiency
+    - cargo
+    - low_infra
+    retrofit_feasibility: Low
+    certification_risk: Medium
+    infrastructure_impact: High
+- id: AMPEL-15-CANARD
+  name: Canard
+  trl: 9
+  status: PRODUCTION
+  programs: Rafale, Typhoon, P180
+  green_potential:
+    score: 64
+    class: Medium
+    drivers:
+    - efficiency
+    - control
+    - military
+    retrofit_feasibility: Medium
+    certification_risk: Low
+    infrastructure_impact: Low
+- id: AMPEL-12-COMPOUND-HELI
+  name: Compound Helicopter
+  trl: 8
+  status: DEVELOPMENT
+  programs: S-97, RACER
+  green_potential:
+    score: 63
+    class: Medium
+    drivers:
+    - speed
+    - efficiency
+    - hybrid_potential
+    retrofit_feasibility: Medium
+    certification_risk: Medium
+    infrastructure_impact: Low
+- id: AMPEL-13-TILTWING
+  name: Tiltwing
+  trl: 5
+  status: DEVELOPMENT
+  programs: NASA concepts
+  green_potential:
+    score: 62
+    class: Medium
+    drivers:
+    - efficiency
+    - eVTOL
+    - regional
+    retrofit_feasibility: Low
+    certification_risk: High
+    infrastructure_impact: Medium
+- id: AMPEL-33-GROUND-EFFECT
+  name: Ground Effect Vehicle
+  trl: 7
+  status: DEVELOPMENT
+  programs: REGENT, Liberty
+  green_potential:
+    score: 62
+    class: Medium
+    drivers:
+    - efficiency
+    - maritime
+    - limited_routes
+    retrofit_feasibility: Low
+    certification_risk: Medium
+    infrastructure_impact: High
+- id: AMPEL-17-AMPHIBIOUS
+  name: Amphibious
+  trl: 9
+  status: PRODUCTION
+  programs: US-2, Icon A5
+  green_potential:
+    score: 61
+    class: Medium
+    drivers:
+    - versatility
+    - SAR
+    - hybrid_potential
+    retrofit_feasibility: Medium
+    certification_risk: Low
+    infrastructure_impact: Medium
+- id: AMPEL-14-AUTOGYRO
+  name: Autogyro
+  trl: 9
+  status: PRODUCTION
+  programs: AutoGyro, Magni
+  green_potential:
+    score: 60
+    class: Medium
+    drivers:
+    - simplicity
+    - safety
+    - low_fuel
+    retrofit_feasibility: High
+    certification_risk: Low
+    infrastructure_impact: Low
+- id: AMPEL-35-TANDEM
+  name: Tandem Wing
+  trl: 7
+  status: PRODUCTION
+  programs: Velocity V-Twin
+  green_potential:
+    score: 59
+    class: Low
+    drivers:
+    - efficiency
+    - kit
+    - limited
+    retrofit_feasibility: Medium
+    certification_risk: Low
+    infrastructure_impact: Low
+- id: AMPEL-19-TAILLESS
+  name: Tailless/Flying Wing
+  trl: 9
+  status: OPERATIONAL
+  programs: B-2, B-21
+  green_potential:
+    score: 58
+    class: Low
+    drivers:
+    - stealth
+    - efficiency
+    - military
+    retrofit_feasibility: Low
+    certification_risk: Low
+    infrastructure_impact: Low
+- id: AMPEL-20-DELTA
+  name: Delta Wing
+  trl: 9
+  status: PRODUCTION
+  programs: Tejas Mk1A
+  green_potential:
+    score: 55
+    class: Low
+    drivers:
+    - supersonic
+    - military
+    - limited_civil
+    retrofit_feasibility: Low
+    certification_risk: Low
+    infrastructure_impact: Low
+- id: AMPEL-21-VGW
+  name: Variable Geometry Wing
+  trl: 9
+  status: OPERATIONAL
+  programs: B-1B, Tu-160M
+  green_potential:
+    score: 52
+    class: Low
+    drivers:
+    - complexity
+    - military
+    - high_fuel
+    retrofit_feasibility: Low
+    certification_risk: Low
+    infrastructure_impact: Low
+- id: AMPEL-22-VTOL-JET
+  name: VTOL Jet
+  trl: 9
+  status: PRODUCTION
+  programs: F-35B
+  green_potential:
+    score: 50
+    class: Low
+    drivers:
+    - military
+    - complex
+    - high_fuel
+    retrofit_feasibility: Low
+    certification_risk: Low
+    infrastructure_impact: Low
+- id: AMPEL-23-SUPERSONIC
+  name: Supersonic
+  trl: 8
+  status: DEVELOPMENT
+  programs: Boom, X-59
+  green_potential:
+    score: 48
+    class: Low
+    drivers:
+    - speed
+    - premium
+    - SAF_only
+    retrofit_feasibility: Low
+    certification_risk: High
+    infrastructure_impact: Medium
+- id: AMPEL-24-BIPLANE
+  name: Biplane
+  trl: 9
+  status: PRODUCTION
+  programs: Pitts, WACO
+  green_potential:
+    score: 45
+    class: Low
+    drivers:
+    - niche
+    - aerobatic
+    - limited
+    retrofit_feasibility: Medium
+    certification_risk: Low
+    infrastructure_impact: Low
+- id: AMPEL-25-TWIN-FUSELAGE
+  name: Twin Fuselage
+  trl: 9
+  status: OPERATIONAL
+  programs: Stratolaunch
+  green_potential:
+    score: 42
+    class: Low
+    drivers:
+    - special_mission
+    - launch
+    - limited
+    retrofit_feasibility: Low
+    certification_risk: Low
+    infrastructure_impact: High
+- id: AMPEL-30-ORNITHOPTER
+  name: Ornithopter
+  trl: 3
+  status: RESEARCH
+  programs: Festo, DelFly
+  green_potential:
+    score: 40
+    class: Low
+    drivers:
+    - biomimetic
+    - MAV
+    - limited
+    retrofit_feasibility: Low
+    certification_risk: High
+    infrastructure_impact: High
+- id: AMPEL-32-LIFTING-BODY
+  name: Lifting Body
+  trl: 7
+  status: DEVELOPMENT
+  programs: Dream Chaser
+  green_potential:
+    score: 35
+    class: Low
+    drivers:
+    - space
+    - reentry
+    - limited_aviation
+    retrofit_feasibility: Low
+    certification_risk: Low
+    infrastructure_impact: High
+- id: AMPEL-34-HYPERSONIC
+  name: Hypersonic
+  trl: 6
+  status: DEVELOPMENT
+  programs: Hermeus, Talon-A
+  green_potential:
+    score: 30
+    class: Low
+    drivers:
+    - speed
+    - military
+    - extreme_fuel
+    retrofit_feasibility: Low
+    certification_risk: High
+    infrastructure_impact: High

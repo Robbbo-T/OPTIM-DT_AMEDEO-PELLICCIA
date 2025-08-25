@@ -1,0 +1,20 @@
+ampel_id: AMPEL-29-BLI
+description: Boundary Layer Ingestion
+trl: 4
+status: RESEARCH
+active_programs:
+- STARC-ABL
+green_potential:
+  score: 74
+  class: Medium
+  emoji: ♻︎
+  drivers:
+  - efficiency
+  - integration
+  - propulsion
+  retrofit_feasibility: Low
+  certification_risk: High
+  infrastructure_impact: Medium
+segments:
+- ARC-ARCHITECTURE
+- MEC-MECHANICAL

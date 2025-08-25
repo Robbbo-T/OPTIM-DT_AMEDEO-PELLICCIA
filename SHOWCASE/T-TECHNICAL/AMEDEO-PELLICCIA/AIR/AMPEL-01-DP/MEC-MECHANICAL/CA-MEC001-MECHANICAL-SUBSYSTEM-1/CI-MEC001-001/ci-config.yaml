@@ -1,0 +1,15 @@
+ci: CI-MEC001-001
+lifecycle_phases:
+- 01-Requirements
+- 02-Design
+- 03-Building-Prototyping
+- 04-Executables-Packages
+- 05-Verification-Validation
+- 06-Integration-Qualification
+- 07-Certification-Security
+- 08-Production-Scale
+- 09-Ops-Services
+- 10-MRO
+- 11-Sustainment-Recycle
+created: 2025-08-25 16:30:08 UTC
+status: ACTIVE

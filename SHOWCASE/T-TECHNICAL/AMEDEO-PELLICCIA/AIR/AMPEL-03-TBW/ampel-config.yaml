@@ -1,0 +1,21 @@
+ampel_id: AMPEL-03-TBW
+description: Truss-Braced Wing
+trl: 6
+status: DEVELOPMENT
+active_programs:
+- X-66A
+- NASA TTBW
+green_potential:
+  score: 82
+  class: High
+  emoji: ♻️
+  drivers:
+  - efficiency
+  - electrification
+  - structure
+  retrofit_feasibility: Medium
+  certification_risk: Medium
+  infrastructure_impact: Low
+segments:
+- ARC-ARCHITECTURE
+- MEC-MECHANICAL
