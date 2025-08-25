@@ -152,7 +152,7 @@ class FrameworkVerifier:
         
         # Verify expected AMPEL count
         if ampel_count > 0:
-            self.info.append(f"✓ AMPEL structures present")
+            self.info.append("✓ AMPEL structures present")
         else:
             self.warnings.append("⚠ No AMPEL structures found")
     
