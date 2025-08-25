@@ -191,7 +191,7 @@ class FrameworkVerifier:
                         if readme_count > 0:
                             self.info.append(f"        ✓ {readme_count} README files found")
                         else:
-                            self.warnings.append(f"        ⚠ No README files found")
+                            self.warnings.append("        ⚠ No README files found")
                     else:
                         self.warnings.append(f"      ⚠ No phase directories in {sample_ci.name}")
                 else:
