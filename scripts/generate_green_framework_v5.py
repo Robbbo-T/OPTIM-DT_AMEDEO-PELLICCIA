@@ -438,7 +438,7 @@ Generated: {self.timestamp}
             # Create AMPELs sorted by green potential
             sorted_ampels = sorted(self.active_ampels_green, key=lambda x: x[6], reverse=True)
             
-            print(f"  Generating 35 AMPELs sorted by green potential...")
+            print("  Generating 35 AMPELs sorted by green potential...")
             for idx, ampel in enumerate(sorted_ampels[:10], 1):  # Limit to top 10 for demo
                 num, code, desc, trl, status, programs, score, class_, drivers, retrofit, cert, infra = ampel
                 ampel_name = f"AMPEL-{num}-{code}"
