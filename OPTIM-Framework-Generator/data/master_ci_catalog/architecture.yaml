@@ -1,0 +1,13 @@
+A-ARCHITECTURE:
+  description: "Airframe structure and assembly"
+  cis:
+    - ["CI-A001", "FORWARD-FUSELAGE", "Section 41 - Nose to forward door"]
+    - ["CI-A002", "CENTER-FUSELAGE", "Section 44 - Wing box integration"]
+    - ["CI-A003", "AFT-FUSELAGE", "Section 46/47 - Aft pressure section"]
+    - ["CI-A004", "WING-BOX", "Primary wing structure and spars"]
+    - ["CI-A005", "EMPENNAGE", "Vertical and horizontal stabilizers"]
+    - ["CI-A006", "CONTROL-SURFACES", "Rudder, elevators, ailerons"]
+    - ["CI-A007", "WING-TIPS", "Winglet and tip structures"]
+    - ["CI-A008", "DOORS-HATCHES", "Access panels and service doors"]
+    - ["CI-A009", "FAIRINGS", "Aerodynamic transition sections"]
+    - ["CI-A010", "FLOOR-STRUCTURE", "Cabin and cargo floor systems"]

@@ -1,0 +1,41 @@
+# Data Validation Rules for OPTIM Framework Generator
+
+catalog_validation:
+  required_segment_fields:
+    - "description"
+    - "cis"
+  
+  ci_structure:
+    required_fields: 3
+    field_types:
+      0: "string"  # CI ID
+      1: "string"  # CI Name
+      2: "string"  # CI Description
+
+ampel_validation:
+  required_fields:
+    - "name"
+    - "description"
+    - "examples"
+  
+  optional_fields:
+    - "A-ARCHITECTURE"
+    - "M-MECHANICAL"
+    - "E-ENVIRONMENTAL"
+    - "P-PROPULSION"
+    - "S-SYSTEMS"
+    - "T-THERMAL"
+    - "C-CONTROLS"
+    - "I-INTERIOR"
+    - "F-FUSELAGE"
+    - "W-WING"
+    - "L-LANDING"
+    - "N-NACELLES"
+    - "R-ROTOR"
+    - "V-AVIONICS"
+    - "D-DOCUMENTS"
+
+constraints:
+  max_ci_per_segment: 1000
+  max_segments_per_ampel: 20
+  max_ampels: 50

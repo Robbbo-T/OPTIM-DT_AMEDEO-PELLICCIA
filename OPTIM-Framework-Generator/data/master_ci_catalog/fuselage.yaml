@@ -1,0 +1,8 @@
+F-FUSELAGE:
+  description: "Fuselage-specific structures and components"
+  cis:
+    - ["CI-F001", "NOSE-CONE", "Radome and nose structure"]
+    - ["CI-F002", "COCKPIT-SECTION", "Flight deck and windscreen"]
+    - ["CI-F003", "PASSENGER-CABIN", "Main cabin structure and windows"]
+    - ["CI-F004", "CARGO-COMPARTMENT", "Cargo hold structure and systems"]
+    - ["CI-F005", "TAIL-CONE", "Aft fuselage termination"]
