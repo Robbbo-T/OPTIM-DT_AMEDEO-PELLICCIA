@@ -322,7 +322,7 @@ class DocumentationGenerator:
         # Training overview
         overview_path = training_dir / "README.md"
         
-        with open(overview_path, 'w') as f:
+        with open(overview_path, 'w', encoding='utf_8') as f:
             f.write("# OPTIM-DT Framework Training Materials\n\n")
             f.write(f"Generated: {self.timestamp}\n\n")
             
