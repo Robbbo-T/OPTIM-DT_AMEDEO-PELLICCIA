@@ -117,88 +117,88 @@ class OPTIMUltimateFramework:
         # CA DEFINITIONS PER SEGMENT
         self.ca_structure = {
             "A-ARCHITECTURE": [
-                ("CA-A-001", "PRIMARY-STRUCTURE", 8),
-                ("CA-A-002", "WING-STRUCTURE", 10),
-                ("CA-A-003", "EMPENNAGE", 7),
-                ("CA-A-004", "CONTROL-SURFACES", 9),
-                ("CA-A-005", "DOORS-ACCESS", 6)
+                ("CA-A-001-PRIMARY-STRUCTURE", "PRIMARY-STRUCTURE", 8),
+                ("CA-A-002-WING-STRUCTURE", "WING-STRUCTURE", 10),
+                ("CA-A-003-EMPENNAGE", "EMPENNAGE", 7),
+                ("CA-A-004-CONTROL-SURFACES", "CONTROL-SURFACES", 9),
+                ("CA-A-005-DOORS-ACCESS", "DOORS-ACCESS", 6)
             ],
             "M-MECHANICAL": [
-                ("CA-M-001", "LANDING-GEAR", 7),
-                ("CA-M-002", "HYDRAULICS", 5),
-                ("CA-M-003", "ACTUATION", 6),
-                ("CA-M-004", "MECHANISMS", 4)
+                ("CA-M-001-LANDING-GEAR", "LANDING-GEAR", 7),
+                ("CA-M-002-HYDRAULICS", "HYDRAULICS", 5),
+                ("CA-M-003-ACTUATION", "ACTUATION", 6),
+                ("CA-M-004-MECHANISMS", "MECHANISMS", 4)
             ],
             "E-ENVIRONMENTAL": [
-                ("CA-E-001", "AIR-CONDITIONING", 5),
-                ("CA-E-002", "PRESSURIZATION", 4),
-                ("CA-E-003", "ICE-PROTECTION", 6),
-                ("CA-E-004", "OXYGEN", 3)
+                ("CA-E-001-AIR-CONDITIONING", "AIR-CONDITIONING", 5),
+                ("CA-E-002-PRESSURIZATION", "PRESSURIZATION", 4),
+                ("CA-E-003-ICE-PROTECTION", "ICE-PROTECTION", 6),
+                ("CA-E-004-OXYGEN", "OXYGEN", 3)
             ],
             "D-DIGITAL": [
-                ("CA-D-001", "FLIGHT-MANAGEMENT", 6),
-                ("CA-D-002", "DISPLAYS", 7),
-                ("CA-D-003", "COMPUTERS", 5),
-                ("CA-D-004", "SOFTWARE", 4)
+                ("CA-D-001-FLIGHT-MANAGEMENT", "FLIGHT-MANAGEMENT", 6),
+                ("CA-D-002-DISPLAYS", "DISPLAYS", 7),
+                ("CA-D-003-COMPUTERS", "COMPUTERS", 5),
+                ("CA-D-004-SOFTWARE", "SOFTWARE", 4)
             ],
             "E2-ENERGY": [
-                ("CA-E2-001", "GENERATION", 5),
-                ("CA-E2-002", "DISTRIBUTION", 6),
-                ("CA-E2-003", "STORAGE", 4),
-                ("CA-E2-004", "CONVERSION", 3)
+                ("CA-E2-001-GENERATION", "GENERATION", 5),
+                ("CA-E2-002-DISTRIBUTION", "DISTRIBUTION", 6),
+                ("CA-E2-003-STORAGE", "STORAGE", 4),
+                ("CA-E2-004-CONVERSION", "CONVERSION", 3)
             ],
             "O-OPERATIONS": [
-                ("CA-O-001", "COCKPIT", 6),
-                ("CA-O-002", "CABIN", 8),
-                ("CA-O-003", "CARGO", 4),
-                ("CA-O-004", "EMERGENCY", 5)
+                ("CA-O-001-COCKPIT", "COCKPIT", 6),
+                ("CA-O-002-CABIN", "CABIN", 8),
+                ("CA-O-003-CARGO", "CARGO", 4),
+                ("CA-O-004-EMERGENCY", "EMERGENCY", 5)
             ],
             "P-PROPULSION": [
-                ("CA-P-001", "ENGINES", 10),
-                ("CA-P-002", "FUEL-SYSTEMS", 6),
-                ("CA-P-003", "NACELLES", 4),
-                ("CA-P-004", "CONTROLS", 3)
+                ("CA-P-001-ENGINES", "ENGINES", 10),
+                ("CA-P-002-FUEL-SYSTEMS", "FUEL-SYSTEMS", 6),
+                ("CA-P-003-NACELLES", "NACELLES", 4),
+                ("CA-P-004-CONTROLS", "CONTROLS", 3)
             ],
             "E3-ELECTRONICS": [
-                ("CA-E3-001", "COMMUNICATION", 5),
-                ("CA-E3-002", "NAVIGATION", 6),
-                ("CA-E3-003", "SURVEILLANCE", 4),
-                ("CA-E3-004", "ANTENNAS", 3)
+                ("CA-E3-001-COMMUNICATION", "COMMUNICATION", 5),
+                ("CA-E3-002-NAVIGATION", "NAVIGATION", 6),
+                ("CA-E3-003-SURVEILLANCE", "SURVEILLANCE", 4),
+                ("CA-E3-004-ANTENNAS", "ANTENNAS", 3)
             ],
             "L-LOGISTICS": [
-                ("CA-L-001", "MAINTENANCE", 4),
-                ("CA-L-002", "SPARES", 3),
-                ("CA-L-003", "SUPPLY-CHAIN", 3)
+                ("CA-L-001-MAINTENANCE", "MAINTENANCE", 4),
+                ("CA-L-002-SPARES", "SPARES", 3),
+                ("CA-L-003-SUPPLY-CHAIN", "SUPPLY-CHAIN", 3)
             ],
             "L2-LINKS": [
-                ("CA-L2-001", "NETWORKS", 4),
-                ("CA-L2-002", "DATABUS", 3),
-                ("CA-L2-003", "WIRELESS", 2)
+                ("CA-L2-001-NETWORKS", "NETWORKS", 4),
+                ("CA-L2-002-DATABUS", "DATABUS", 3),
+                ("CA-L2-003-WIRELESS", "WIRELESS", 2)
             ],
             "I-INTEGRATION": [
-                ("CA-I-001", "INTERFACES", 3),
-                ("CA-I-002", "TESTING", 2),
-                ("CA-I-003", "VALIDATION", 2)
+                ("CA-I-001-INTERFACES", "INTERFACES", 3),
+                ("CA-I-002-TESTING", "TESTING", 2),
+                ("CA-I-003-VALIDATION", "VALIDATION", 2)
             ],
             "C-CONTROL": [
-                ("CA-C-001", "FLIGHT-CONTROLS", 5),
-                ("CA-C-002", "ENGINE-CONTROLS", 3),
-                ("CA-C-003", "SYSTEMS-CONTROLS", 3)
+                ("CA-C-001-FLIGHT-CONTROLS", "FLIGHT-CONTROLS", 5),
+                ("CA-C-002-ENGINE-CONTROLS", "ENGINE-CONTROLS", 3),
+                ("CA-C-003-SYSTEMS-CONTROLS", "SYSTEMS-CONTROLS", 3)
             ],
             "C2-CERTIFICATION": [
-                ("CA-C2-001", "TYPE-CERT", 3),
-                ("CA-C2-002", "COMPLIANCE", 2),
-                ("CA-C2-003", "DOCUMENTATION", 2)
+                ("CA-C2-001-TYPE-CERT", "TYPE-CERT", 3),
+                ("CA-C2-002-COMPLIANCE", "COMPLIANCE", 2),
+                ("CA-C2-003-DOCUMENTATION", "DOCUMENTATION", 2)
             ],
             "I2-INTELLIGENCE": [
-                ("CA-I2-001", "AI-SYSTEMS", 3),
-                ("CA-I2-002", "AUTONOMY", 2),
-                ("CA-I2-003", "PREDICTIVE", 2)
+                ("CA-I2-001-AI-SYSTEMS", "AI-SYSTEMS", 3),
+                ("CA-I2-002-AUTONOMY", "AUTONOMY", 2),
+                ("CA-I2-003-PREDICTIVE", "PREDICTIVE", 2)
             ],
             "A2-AIRPORTS": [
-                ("CA-A2-001", "GROUND-SUPPORT", 3),
-                ("CA-A2-002", "FACILITIES", 2),
-                ("CA-A2-003", "EQUIPMENT", 2)
+                ("CA-A2-001-GROUND-SUPPORT", "GROUND-SUPPORT", 3),
+                ("CA-A2-002-FACILITIES", "FACILITIES", 2),
+                ("CA-A2-003-EQUIPMENT", "EQUIPMENT", 2)
             ]
         }
         
@@ -515,7 +515,11 @@ class OPTIMUltimateFramework:
         """Generate COMPLETE AMPEL with all segments, CAs, CIs, and phases"""
         self.create_dir(ampel_path)
         
-        # AMPEL documentation - customize for AMPEL-29-HE
+        # AMPEL documentation - handle both special cases
+        # Add complete marker for AMPEL-01-TUW in AIR domain
+        complete_marker = " [COMPLETE EXAMPLE STRUCTURE]" if (ampel_id == "AMPEL-01-TUW" and domain == "AIR") else ""
+        
+        # Customize for AMPEL-29-HE
         if "AMPEL-29-HE" in ampel_id:
             readme_content = f"""# {ampel_id}: {ampel_name}
 
@@ -544,7 +548,7 @@ class OPTIMUltimateFramework:
 Generated: {self.timestamp}
 """
         else:
-            readme_content = f"""# {ampel_id}: {ampel_name}
+            readme_content = f"""# {ampel_id}: {ampel_name}{complete_marker}
 
 ## Domain: {domain}
 ## Examples: {ampel_examples}
@@ -584,6 +588,8 @@ Generated: {self.timestamp}
                     "L-LOGISTICS", "L2-LINKS", "I-INTEGRATION", "C-CONTROL",
                     "C2-CERTIFICATION", "I2-INTELLIGENCE", "A2-AIRPORTS"
                 ],
+                "lifecycle_phases": len(self.lifecycle_phases),
+                "is_complete_example": False,
                 "created": self.timestamp
             }
         else:
@@ -593,6 +599,8 @@ Generated: {self.timestamp}
                 "domain": domain,
                 "examples": ampel_examples,
                 "segments": len(self.segments),
+                "lifecycle_phases": len(self.lifecycle_phases),
+                "is_complete_example": ampel_id == "AMPEL-01-TUW" and domain == "AIR",
                 "created": self.timestamp
             }
         
@@ -648,7 +656,10 @@ Generated: {self.timestamp}
                 
                 # Generate CIs for this CA
                 for ci_num in range(1, ci_count + 1):
-                    ci_id = f"CI-{ca_id}-{ci_num:03d}"
+                    # Extract shorter CA ID for CI naming (e.g., CA-A-001 from CA-A-001-PRIMARY-STRUCTURE)
+                    ca_id_short = ca_id.split('-', 3)[:3]  # Take first 3 parts: CA-A-001
+                    ca_id_for_ci = '-'.join(ca_id_short)
+                    ci_id = f"CI-{ca_id_for_ci}-{ci_num:03d}"
                     ci_path = self.create_dir(ca_path / ci_id)
                     
                     self.create_file(ci_path / "README.md", f"""# {ci_id}
