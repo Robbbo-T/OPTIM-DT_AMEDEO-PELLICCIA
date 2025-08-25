@@ -1,0 +1,8 @@
+V-AVIONICS:
+  description: "Avionics and electronic systems"
+  cis:
+    - ["CI-V001", "FLIGHT-DISPLAYS", "Primary flight display systems"]
+    - ["CI-V002", "ENGINE-DISPLAYS", "Engine indication and crew alerting"]
+    - ["CI-V003", "NAVIGATION-DISPLAY", "Electronic flight information system"]
+    - ["CI-V004", "MULTIFUNCTION-DISPLAY", "Configurable display systems"]
+    - ["CI-V005", "HEAD-UP-DISPLAY", "Pilot head-up display system"]

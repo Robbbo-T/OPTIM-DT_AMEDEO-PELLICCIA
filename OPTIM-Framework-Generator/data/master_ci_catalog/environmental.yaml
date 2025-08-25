@@ -1,0 +1,13 @@
+E-ENVIRONMENTAL:
+  description: "Environmental control and life support"
+  cis:
+    - ["CI-E001", "CABIN-PRESSURIZATION", "Pressure control and safety systems"]
+    - ["CI-E002", "AIR-CONDITIONING", "Temperature control and distribution"]
+    - ["CI-E003", "OXYGEN-SYSTEM", "Emergency and supplemental oxygen"]
+    - ["CI-E004", "CABIN-AIR-FILTRATION", "Air quality and filtration systems"]
+    - ["CI-E005", "HUMIDITY-CONTROL", "Moisture management and control"]
+    - ["CI-E006", "VENTILATION-SYSTEM", "Fresh air circulation and exhaust"]
+    - ["CI-E007", "EMERGENCY-SYSTEMS", "Life support emergency equipment"]
+    - ["CI-E008", "ENVIRONMENTAL-MONITORING", "Sensors and control systems"]
+    - ["CI-E009", "CABIN-LIGHTING", "Interior and emergency lighting"]
+    - ["CI-E010", "NOISE-CONTROL", "Acoustic treatment and insulation"]

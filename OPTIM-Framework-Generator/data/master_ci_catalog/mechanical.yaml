@@ -1,0 +1,13 @@
+M-MECHANICAL:
+  description: "Mechanical systems and components"
+  cis:
+    - ["CI-M001", "HYDRAULIC-SYSTEM", "Primary and backup hydraulic power"]
+    - ["CI-M002", "PNEUMATIC-SYSTEM", "Bleed air and pneumatic distribution"]
+    - ["CI-M003", "FUEL-SYSTEM", "Fuel tanks, pumps, and distribution"]
+    - ["CI-M004", "FLIGHT-CONTROLS", "Primary and secondary flight controls"]
+    - ["CI-M005", "LANDING-GEAR", "Main and nose landing gear assemblies"]
+    - ["CI-M006", "BRAKING-SYSTEM", "Wheel brakes and anti-skid systems"]
+    - ["CI-M007", "ACTUATION-SYSTEMS", "Linear and rotary actuators"]
+    - ["CI-M008", "MECHANICAL-LINKAGES", "Control cables and mechanical connections"]
+    - ["CI-M009", "LUBRICATION-SYSTEM", "Engine and gearbox lubrication"]
+    - ["CI-M010", "COOLING-SYSTEM", "Equipment cooling and heat exchangers"]

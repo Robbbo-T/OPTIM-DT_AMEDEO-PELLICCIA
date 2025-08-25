@@ -1,0 +1,13 @@
+S-SYSTEMS:
+  description: "Aircraft systems integration and management"
+  cis:
+    - ["CI-S001", "ELECTRICAL-POWER", "AC/DC power generation and distribution"]
+    - ["CI-S002", "FLIGHT-MANAGEMENT", "FMS and navigation systems"]
+    - ["CI-S003", "COMMUNICATION-SYSTEMS", "Radio, intercom, and data links"]
+    - ["CI-S004", "NAVIGATION-AIDS", "GPS, ILS, and approach systems"]
+    - ["CI-S005", "SURVEILLANCE-SYSTEMS", "Transponder and ADS-B systems"]
+    - ["CI-S006", "WEATHER-RADAR", "Onboard weather detection systems"]
+    - ["CI-S007", "AUTOPILOT-SYSTEM", "Automatic flight control systems"]
+    - ["CI-S008", "WARNING-SYSTEMS", "Crew alerting and warning systems"]
+    - ["CI-S009", "DATA-RECORDING", "Flight data and voice recorders"]
+    - ["CI-S010", "SYSTEM-INTEGRATION", "Central processing and data buses"]
