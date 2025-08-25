@@ -90,7 +90,7 @@ class OPTIMUltimateFramework:
             ("26", "OW", "Oblique Wing", "AD-1"),
             ("27", "DP", "Distributed Propulsion", "X-57"),
             ("28", "TILTWING", "Tiltwing", "CL-84"),
-            ("29", "CYCLOGYRO", "Cyclogyro", "CycloTech"),
+            ("29", "HE", "Hybrid-Electric (eSTOL/Regional)", "Electra.aero"),
             ("30", "HYPERSONIC", "Hypersonic", "X-43A"),
             ("31", "TAILSITTER", "Tailsitter", "XFY Pogo"),
             ("32", "JW", "Joined Wing", "SensorCraft"),
@@ -199,6 +199,88 @@ class OPTIMUltimateFramework:
                 ("CA-A2-001", "GROUND-SUPPORT", 3),
                 ("CA-A2-002", "FACILITIES", 2),
                 ("CA-A2-003", "EQUIPMENT", 2)
+            ]
+        }
+        
+        # SPECIALIZED CA STRUCTURE FOR AMPEL-29-HE (Hybrid-Electric)
+        self.ampel_29_he_ca_structure = {
+            "A-ARCHITECTURE": [
+                ("CA-A-001", "BATTERY-MOUNTS", 8),
+                ("CA-A-002", "HV-ROUTING-STRUCTURE", 6),
+                ("CA-A-003", "VENT-FIREWALLS", 5)
+            ],
+            "M-MECHANICAL": [
+                ("CA-M-001", "THERMAL-LOOPS", 5),
+                ("CA-M-002", "COUPLINGS-MOUNTS", 4),
+                ("CA-M-003", "CHARGING-PORT-MECH", 3)
+            ],
+            "E-ENVIRONMENTAL": [
+                ("CA-E-001", "BATTERY-THERMAL-MGMT", 6),
+                ("CA-E-002", "CABIN-EMERGENCY-VENT", 4),
+                ("CA-E-003", "ICE-PROTECTION", 5)
+            ],
+            "D-DIGITAL": [
+                ("CA-D-001", "ENERGY-MGMT-CONTROLLER", 7),
+                ("CA-D-002", "POWERTRAIN-CONTROLLER", 6),
+                ("CA-D-003", "FAULT-DIAGNOSTICS", 5)
+            ],
+            "E2-ENERGY": [
+                ("CA-E2-001", "ENERGY-STORAGE", 8),
+                ("CA-E2-002", "POWER-GENERATION", 6),
+                ("CA-E2-003", "HV-DISTRIBUTION", 7),
+                ("CA-E2-004", "CHARGING", 5),
+                ("CA-E2-005", "ISOLATION-PROTECTION", 4)
+            ],
+            "O-OPERATIONS": [
+                ("CA-O-001", "OPS-PROCEDURES", 4),
+                ("CA-O-002", "MAINTENANCE-PROCEDURES", 5),
+                ("CA-O-003", "EMERGENCY-PROCEDURES", 6)
+            ],
+            "P-PROPULSION": [
+                ("CA-P-001", "ELECTRIC-PROPULSORS", 8),
+                ("CA-P-002", "INVERTERS-DRIVES", 6),
+                ("CA-P-003", "REDUCTION-DRIVE", 4),
+                ("CA-P-004", "GENERATOR-INTERFACE", 5)
+            ],
+            "E3-ELECTRONICS": [
+                ("CA-E3-001", "HV-SENSING-PROTECTION", 5),
+                ("CA-E3-002", "AVIONICS-INTERFACES", 4),
+                ("CA-E3-003", "ANTENNAS-TELEMETRY", 3)
+            ],
+            "L-LOGISTICS": [
+                ("CA-L-001", "SPARES-BATTERY-MODULES", 4),
+                ("CA-L-002", "TOOLING-HV-SAFETY", 3),
+                ("CA-L-003", "HAZMAT-HANDLING", 3)
+            ],
+            "L2-LINKS": [
+                ("CA-L2-001", "POWERTRAIN-NETWORK", 4),
+                ("CA-L2-002", "VEHICLE-DATABUS", 3),
+                ("CA-L2-003", "GROUND-COMMS", 2)
+            ],
+            "I-INTEGRATION": [
+                ("CA-I-001", "EMI-EMC-TEST", 3),
+                ("CA-I-002", "HV-ISOLATION-TEST", 4),
+                ("CA-I-003", "SYSTEMS-INTEGRATION", 5)
+            ],
+            "C-CONTROL": [
+                ("CA-C-001", "POWER-LIMITING-MODES", 4),
+                ("CA-C-002", "FAULT-RIDE-THROUGH", 3),
+                ("CA-C-003", "REVERSION-STRATEGIES", 3)
+            ],
+            "C2-CERTIFICATION": [
+                ("CA-C2-001", "DO-311A-BATTERIES", 4),
+                ("CA-C2-002", "DO-160-ENV-TESTS", 3),
+                ("CA-C2-003", "CS-23-25-SPECIAL-CONDITIONS", 3)
+            ],
+            "I2-INTELLIGENCE": [
+                ("CA-I2-001", "ENERGY-ROUTING-OPTIMIZER", 3),
+                ("CA-I2-002", "PREDICTIVE-SOH-SOC", 3),
+                ("CA-I2-003", "FLEET-OPTIMIZATION", 2)
+            ],
+            "A2-AIRPORTS": [
+                ("CA-A2-001", "CHARGING-INFRASTRUCTURE", 3),
+                ("CA-A2-002", "ENERGY-DEPOT", 2),
+                ("CA-A2-003", "SAFETY-ZONES", 2)
             ]
         }
         
@@ -433,8 +515,36 @@ class OPTIMUltimateFramework:
         """Generate COMPLETE AMPEL with all segments, CAs, CIs, and phases"""
         self.create_dir(ampel_path)
         
-        # AMPEL documentation
-        self.create_file(ampel_path / "README.md", f"""# {ampel_id}: {ampel_name}
+        # AMPEL documentation - customize for AMPEL-29-HE
+        if "AMPEL-29-HE" in ampel_id:
+            readme_content = f"""# {ampel_id}: {ampel_name}
+
+## Domain: {domain}
+## Examples: {ampel_examples}
+
+* **Status**: DEVELOPMENT | **TRL**: 5–6
+* **Green Potential**: ♻️ *High* (eSTOL/HE regional).
+* **Drivers**: electrification, efficiency, ruido bajo, infra modular.
+* **Retrofit**: Medio/Alto | **Cert risk**: Medio | **Infra**: Baja–Media.
+
+## Structure
+- **Segments**: 15 (AMEDEO-PELLICCIA)
+- **Constituent Assemblies (CAs)**: Specialized for hybrid-electric systems
+- **Configuration Items (CIs)**: Variable per CA with HV safety focus
+- **Lifecycle Phases**: 11 (UTCS)
+
+## Hybrid-Electric Specific Features
+- Battery energy storage systems with thermal management
+- High voltage (HV) distribution and safety systems
+- Electric propulsion with turbogenerator backup
+- Charging infrastructure interfaces
+- Specialized certification compliance (DO-311A, DO-160, CS-23/25)
+
+## Technical Configuration
+Generated: {self.timestamp}
+"""
+        else:
+            readme_content = f"""# {ampel_id}: {ampel_name}
 
 ## Domain: {domain}
 ## Examples: {ampel_examples}
@@ -447,17 +557,46 @@ class OPTIMUltimateFramework:
 
 ## Technical Configuration
 Generated: {self.timestamp}
-""")
+"""
         
-        # AMPEL configuration
-        self.create_yaml(ampel_path / "ampel-config.yaml", {
-            "ampel_id": ampel_id,
-            "name": ampel_name,
-            "domain": domain,
-            "examples": ampel_examples,
-            "segments": len(self.segments),
-            "created": self.timestamp
-        })
+        self.create_file(ampel_path / "README.md", readme_content)
+        
+        # AMPEL configuration - customize for AMPEL-29-HE
+        if "AMPEL-29-HE" in ampel_id:
+            config_data = {
+                "ampel_id": ampel_id,
+                "name": ampel_name,
+                "domain": domain,
+                "trl": "5-6",
+                "status": "DEVELOPMENT",
+                "examples": [ampel_examples],
+                "green_potential": {
+                    "score": 77,
+                    "class": "High",
+                    "drivers": ["electrification", "short_field", "quiet"]
+                },
+                "retrofit_feasibility": "Medium",
+                "certification_risk": "Medium", 
+                "infrastructure_impact": "Low",
+                "segments": [
+                    "A-ARCHITECTURE", "M-MECHANICAL", "E-ENVIRONMENTAL", "D-DIGITAL", 
+                    "E2-ENERGY", "O-OPERATIONS", "P-PROPULSION", "E3-ELECTRONICS",
+                    "L-LOGISTICS", "L2-LINKS", "I-INTEGRATION", "C-CONTROL",
+                    "C2-CERTIFICATION", "I2-INTELLIGENCE", "A2-AIRPORTS"
+                ],
+                "created": self.timestamp
+            }
+        else:
+            config_data = {
+                "ampel_id": ampel_id,
+                "name": ampel_name,
+                "domain": domain,
+                "examples": ampel_examples,
+                "segments": len(self.segments),
+                "created": self.timestamp
+            }
+        
+        self.create_yaml(ampel_path / "ampel-config.yaml", config_data)
         
         # Generate ALL 15 SEGMENTS
         for seg_letter, seg_name, seg_desc in self.segments:
@@ -473,12 +612,19 @@ Generated: {self.timestamp}
 ## Domain: {domain}
 """)
             
-            # Get CAs for this segment
-            cas_for_segment = self.ca_structure.get(segment_id, [
-                (f"CA-{seg_letter}-001", f"{seg_name}-PRIMARY", 5),
-                (f"CA-{seg_letter}-002", f"{seg_name}-SECONDARY", 4),
-                (f"CA-{seg_letter}-003", f"{seg_name}-AUXILIARY", 3)
-            ])
+            # Get CAs for this segment - use specialized structure for AMPEL-29-HE
+            if "AMPEL-29-HE" in ampel_id:
+                cas_for_segment = self.ampel_29_he_ca_structure.get(segment_id, [
+                    (f"CA-{seg_letter}-001", f"{seg_name}-PRIMARY", 5),
+                    (f"CA-{seg_letter}-002", f"{seg_name}-SECONDARY", 4),
+                    (f"CA-{seg_letter}-003", f"{seg_name}-AUXILIARY", 3)
+                ])
+            else:
+                cas_for_segment = self.ca_structure.get(segment_id, [
+                    (f"CA-{seg_letter}-001", f"{seg_name}-PRIMARY", 5),
+                    (f"CA-{seg_letter}-002", f"{seg_name}-SECONDARY", 4),
+                    (f"CA-{seg_letter}-003", f"{seg_name}-AUXILIARY", 3)
+                ])
             
             # Generate CAs for this segment
             for ca_id, ca_name, ci_count in cas_for_segment:
@@ -545,7 +691,70 @@ Generated: {self.timestamp}
             
             self.stats['segments'] += 1
         
+        # Generate specialized interfaces for AMPEL-29-HE
+        if "AMPEL-29-HE" in ampel_id:
+            self.generate_ampel_29_he_interfaces(ampel_path, ampel_id)
+        
         self.stats['ampels'] += 1
+
+    def generate_ampel_29_he_interfaces(self, ampel_path, ampel_id):
+        """Generate specialized interface files for AMPEL-29-HE"""
+        
+        # HV Safety interfaces for E2-ENERGY/CA-E2-001-ENERGY-STORAGE
+        e2_path = ampel_path / "E2-ENERGY" / "CA-E2-001-ENERGY-STORAGE"
+        if not self.dry:
+            e2_path.mkdir(parents=True, exist_ok=True)
+        
+        self.create_yaml(e2_path / "interfaces-to-enr-ele.yaml", {
+            "fuel_system_safety": {
+                "inerting_system": {
+                    "interface_to": "ENV-ENVIRONMENTAL",
+                    "provisions": ["vent_paths", "fire_barriers"]
+                }
+            },
+            "lightning_protection": {
+                "interface_to": "ELE-ELECTRONICS",
+                "provisions": ["panel_bonding", "probe_shielding"]
+            },
+            "hv_safety": {
+                "interface_to": "ENR-ENERGY", 
+                "provisions": ["IMD", "contactor_interlocks", "HVIL", "fuses"]
+            },
+            "compliance": ["DO-311A", "DO-160", "FAR_25_981(SFAR88)"]
+        })
+        
+        # LPS bonding interfaces for A-ARCHITECTURE/CA-A-002-HV-ROUTING-STRUCTURE
+        a_path = ampel_path / "A-ARCHITECTURE" / "CA-A-002-HV-ROUTING-STRUCTURE"
+        if not self.dry:
+            a_path.mkdir(parents=True, exist_ok=True)
+            
+        self.create_yaml(a_path / "lps-bonding-ewis-interfaces.yaml", {
+            "lps_bonding": {
+                "primary_paths": ["wing_root_bonds", "tail_bond_jumpers"],
+                "secondary_paths": ["conductive_sealant", "mesh_integration"]
+            },
+            "ewis_structural_bonds": ["ground_studs", "bond_straps", "cable_tray_grounding"],
+            "interfaces": [
+                {"to": "ELE-ELECTRONICS", "type": "lightning_protection"},
+                {"to": "ENR-ENERGY", "type": "electrical_bonding"}
+            ]
+        })
+        
+        # Anti-ice provisions for E-ENVIRONMENTAL/CA-E-003-ICE-PROTECTION  
+        e_path = ampel_path / "E-ENVIRONMENTAL" / "CA-E-003-ICE-PROTECTION"
+        if not self.dry:
+            e_path.mkdir(parents=True, exist_ok=True)
+            
+        self.create_yaml(e_path / "anti-ice-provisions.yaml", {
+            "structural_provisions": {
+                "electric_heating": ["heater_mat_bonding", "cable_routing", "temp_sensors"],
+                "hot_bleed_air": ["piccolo_provisions"]
+            },
+            "interfaces": [
+                {"to": "ENR-ENERGY", "type": "electrical_power"},
+                {"to": "ENV-ENVIRONMENTAL", "type": "bleed_air_ducting"}
+            ]
+        })
 
     def generate_i_intelligent(self):
         """Generate I-INTELLIGENT layer"""
