@@ -202,6 +202,54 @@ class OPTIMUltimateFramework:
             ]
         }
         
+        # BWB-SPECIFIC CA STRUCTURE (AMPEL-24-BWB)
+        self.bwb_ca_structure = {
+            "A-ARCHITECTURE": [
+                ("CA-A-001-CENTER-BODY-BOX", "CENTER-BODY-BOX", 8),
+                ("CA-A-002-OUTBOARD-WING-TRANSITION", "OUTBOARD-WING-TRANSITION", 10),
+                ("CA-A-003-MULTI-BUBBLE-CABIN", "MULTI-BUBBLE-CABIN", 7),
+                ("CA-A-004-PRESSURE-BARRIERS", "PRESSURE-BARRIERS", 6),
+                ("CA-A-005-EMERGENCY-EGRESS", "EMERGENCY-EGRESS", 6)
+            ],
+            "E2-ENERGY": [
+                ("CA-E2-001", "GENERATION", 5),
+                ("CA-E2-002", "DISTRIBUTION", 6),
+                ("CA-E2-003", "STORAGE", 4),
+                ("CA-E2-004", "CONVERSION", 3),
+                ("CA-E2-005-HYDROGEN-STORAGE", "HYDROGEN-STORAGE", 5)
+            ]
+        }
+        
+        # BWB-SPECIFIC CI NAMES
+        self.bwb_ci_names = {
+            "CA-A-001-CENTER-BODY-BOX": [
+                "CB-PRIMARY-GRID", "CB-RIBS-BULKHEADS", "CB-SKIN-PANELS", 
+                "CB-LANDING-GEAR-REINFS", "CB-PASSAGEWAYS", "CB-ACCESS-DOORS",
+                "CB-LPS-BONDING", "CB-SYSTEMS-BRACKETS"
+            ],
+            "CA-A-002-OUTBOARD-WING-TRANSITION": [
+                "OB-ROOT-JOINT", "OB-SPAR-CAPS", "OB-RIBS", "OB-LEADING-EDGE",
+                "OB-TRAILING-EDGE", "OB-PANEL-JOINS", "OB-SYSTEMS-ROUTING",
+                "OB-FAIRINGS", "OB-LPS", "OB-INSPECTION-PANELS"
+            ],
+            "CA-A-003-MULTI-BUBBLE-CABIN": [
+                "CABIN-BUBBLE-FRAMES", "FLOOR-GRID", "SEAT-TRACKS", "DOOR-SURROUNDS",
+                "WINDOW-FRAMES", "RADOME-STRUCTURE", "BIRD-STRIKE-PROTECT"
+            ],
+            "CA-A-004-PRESSURE-BARRIERS": [
+                "INNER-BULKHEADS", "CABIN-BARRIERS", "VENT-RELIEF-PANELS",
+                "SEALING-INTERFACES", "DRY-BAY-PROTECTION", "SYSTEMS-PENETRATIONS"
+            ],
+            "CA-A-005-EMERGENCY-EGRESS": [
+                "EXIT-STRUCTURES", "SLIDE-RAIL-INTEGRATION", "PATHWAYS",
+                "EMERGENCY-LIGHTING-MOUNTS", "SMOKE-BARRIERS", "RESCUE-ACCESS"
+            ],
+            "CA-E2-005-HYDROGEN-STORAGE": [
+                "LH2-TANKS-STRUCT-MOUNTS", "INSULATION-VACUUM-PANELS", "VENT-BOILOFF-DUCTS",
+                "CRASH-LOAD-PATHS", "LEAK-DETECTION-BAYS"
+            ]
+        }
+        
         self.stats = {
             'layers': 0,
             'domains': 0,
@@ -449,15 +497,37 @@ class OPTIMUltimateFramework:
 Generated: {self.timestamp}
 """)
         
-        # AMPEL configuration
-        self.create_yaml(ampel_path / "ampel-config.yaml", {
-            "ampel_id": ampel_id,
-            "name": ampel_name,
-            "domain": domain,
-            "examples": ampel_examples,
-            "segments": len(self.segments),
-            "created": self.timestamp
-        })
+        # AMPEL configuration - use BWB-specific config for AMPEL-24-BWB
+        if ampel_id == "AMPEL-24-BWB":
+            ampel_config = {
+                "ampel_id": ampel_id,
+                "name": "Blended Wing Body",
+                "domain": domain,
+                "examples": ["JetZero BWB", "Airbus MAVERIC"],
+                "trl": 6,
+                "status": "DEVELOPMENT",
+                "green_potential": {
+                    "score": 85,
+                    "class": "High",
+                    "drivers": ["efficiency", "hydrogen_volume", "low_noise"],
+                    "retrofit_feasibility": "Low",
+                    "certification_risk": "High",
+                    "infrastructure_impact": "Medium"
+                },
+                "segments": [seg_name for _, seg_name, _ in self.segments],
+                "created": self.timestamp
+            }
+        else:
+            ampel_config = {
+                "ampel_id": ampel_id,
+                "name": ampel_name,
+                "domain": domain,
+                "examples": ampel_examples,
+                "segments": len(self.segments),
+                "created": self.timestamp
+            }
+        
+        self.create_yaml(ampel_path / "ampel-config.yaml", ampel_config)
         
         # Generate ALL 15 SEGMENTS
         for seg_letter, seg_name, seg_desc in self.segments:
@@ -473,12 +543,15 @@ Generated: {self.timestamp}
 ## Domain: {domain}
 """)
             
-            # Get CAs for this segment
-            cas_for_segment = self.ca_structure.get(segment_id, [
-                (f"CA-{seg_letter}-001", f"{seg_name}-PRIMARY", 5),
-                (f"CA-{seg_letter}-002", f"{seg_name}-SECONDARY", 4),
-                (f"CA-{seg_letter}-003", f"{seg_name}-AUXILIARY", 3)
-            ])
+            # Get CAs for this segment - use BWB-specific structure for AMPEL-24-BWB
+            if ampel_id == "AMPEL-24-BWB" and segment_id in self.bwb_ca_structure:
+                cas_for_segment = self.bwb_ca_structure[segment_id]
+            else:
+                cas_for_segment = self.ca_structure.get(segment_id, [
+                    (f"CA-{seg_letter}-001", f"{seg_name}-PRIMARY", 5),
+                    (f"CA-{seg_letter}-002", f"{seg_name}-SECONDARY", 4),
+                    (f"CA-{seg_letter}-003", f"{seg_name}-AUXILIARY", 3)
+                ])
             
             # Generate CAs for this segment
             for ca_id, ca_name, ci_count in cas_for_segment:
@@ -502,7 +575,17 @@ Generated: {self.timestamp}
                 
                 # Generate CIs for this CA
                 for ci_num in range(1, ci_count + 1):
-                    ci_id = f"CI-{ca_id}-{ci_num:03d}"
+                    # Use BWB-specific CI naming for AMPEL-24-BWB
+                    if ampel_id == "AMPEL-24-BWB" and ca_id in self.bwb_ci_names:
+                        ci_names = self.bwb_ci_names[ca_id]
+                        if ci_num <= len(ci_names):
+                            ci_suffix = ci_names[ci_num - 1]
+                            ci_id = f"CI-{ca_id}-{ci_num:03d}-{ci_suffix}"
+                        else:
+                            ci_id = f"CI-{ca_id}-{ci_num:03d}"
+                    else:
+                        ci_id = f"CI-{ca_id}-{ci_num:03d}"
+                    
                     ci_path = self.create_dir(ca_path / ci_id)
                     
                     self.create_file(ci_path / "README.md", f"""# {ci_id}
