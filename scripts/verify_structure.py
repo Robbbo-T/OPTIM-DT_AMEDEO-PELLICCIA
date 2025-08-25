@@ -71,7 +71,7 @@ class FrameworkVerifier:
         
         if config_file.exists():
             try:
-                with open(config_file, 'r') as f:
+                with open(config_file, 'r', encoding='utf-8') as f:
                     config = yaml.safe_load(f)
                 
                 # Verify configuration structure
