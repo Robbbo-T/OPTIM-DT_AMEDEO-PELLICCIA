@@ -1,6 +1,3 @@
-
-
-
 # **Aircraft Morphologies Programs Exemplar List**
 ## **43 AMPEL Architectures with Accurate Status (2025)**
 
