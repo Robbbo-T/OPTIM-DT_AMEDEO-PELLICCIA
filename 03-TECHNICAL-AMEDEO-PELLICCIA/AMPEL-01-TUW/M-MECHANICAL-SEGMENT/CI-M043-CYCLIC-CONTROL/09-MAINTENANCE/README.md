@@ -1,0 +1,11 @@
+# CI-M043 - CYCLIC-CONTROL
+
+**Phase:** 09-MAINTENANCE
+
+**Description:** Cyclic pitch mechanism
+
+**AMPEL:** AMPEL-01-TUW (Tube and Wing)
+
+**Segment:** M-MECHANICAL
+
+**Generated:** 2025-08-25 17:27:29 UTC
