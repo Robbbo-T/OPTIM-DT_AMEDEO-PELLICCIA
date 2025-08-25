@@ -1,0 +1,31 @@
+# OPTIM Framework Generator Settings
+framework:
+  name: "OPTIM-as-DT"
+  version: "8.0"
+  
+generation:
+  default_output_dir: "OPTIM-FRAMEWORK"
+  create_lifecycle_phases: true
+  max_directory_depth: 5
+  
+lifecycle_phases:
+  - "01-Requirements"
+  - "02-Design"
+  - "03-Building-Prototyping"
+  - "04-Executables-Packages"
+  - "05-Verification-Validation"
+  - "06-Integration-Qualification"
+  - "07-Certification-Security"
+  - "08-Production-Scale"
+  - "09-Ops-Services"
+  - "10-MRO"
+  - "11-Sustainment-Recycle"
+
+documentation:
+  include_readme: true
+  include_config: true
+  include_metadata: true
+  
+logging:
+  default_level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"

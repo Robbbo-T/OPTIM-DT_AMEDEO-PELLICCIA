@@ -1,5 +1,9 @@
 # Generated framework structure
 03-TECHNICAL-AMEDEO-PELLICCIA/*/
+OPTIM-GREEN*/
+SHOWCASE*/
+OPTIM-COMPLETE-V10/
+OPTIM-FRAMEWORK/
 
 # Python
 __pycache__/
@@ -25,10 +29,13 @@ wheels/
 MANIFEST
 
 # Virtual environments
+.env
+.venv
+env/
 venv/
 ENV/
-env/
-.venv/
+env.bak/
+venv.bak/
 
 # IDE
 .vscode/
@@ -41,7 +48,9 @@ env/
 .DS_Store
 Thumbs.db
 
-# Logs
+# Testing and coverage
+.pytest_cache/
+.coverage
 *.log
 
 # Temporary files
@@ -49,9 +58,12 @@ Thumbs.db
 *.temp
 /tmp/
 
-# Generated documentation (keep docs/ but exclude auto-generated if needed)
-# docs/generated/
-
 # Configuration overrides
 config/local.yaml
 config/development.yaml
+
+# Generated documentation (keep docs/ but exclude auto-generated if needed)
+# docs/generated/
+
+# Keep documentation examples
+!docs/examples/

@@ -1,0 +1,8 @@
+W-WING:
+  description: "Wing-specific structures and components"
+  cis:
+    - ["CI-W001", "WING-ROOT", "Wing-to-fuselage connection"]
+    - ["CI-W002", "WING-TIP", "Outboard wing termination"]
+    - ["CI-W003", "LEADING-EDGE", "Wing leading edge devices"]
+    - ["CI-W004", "TRAILING-EDGE", "Wing trailing edge devices"]
+    - ["CI-W005", "WING-FUEL-TANKS", "Integral fuel tank systems"]
