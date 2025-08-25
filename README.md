@@ -266,11 +266,17 @@ Each Configuration Item progresses through:
 git clone https://github.com/your-org/OPTIM-DT_AMEDEO-PELLICCIA.git
 cd OPTIM-DT_AMEDEO-PELLICCIA
 
-# Generate the complete framework structure
-python3 scripts/generate_framework_v3.py
+# Install dependencies
+pip install -r requirements.txt
 
-# Verify the structure
-python3 scripts/verify_structure.py
+# Generate the GREEN framework with sustainability scoring (V5.0)
+python3 scripts/generate_green_framework_v5.py
+
+# Generate with custom settings
+python3 scripts/generate_green_framework_v5.py --base OPTIM-GREEN --max-segments 5 --top-n 10
+
+# Dry run to preview
+python3 scripts/generate_green_framework_v5.py --dry
 
 # Generate documentation
 python3 scripts/generate_docs.py
@@ -285,10 +291,13 @@ python3 scripts/generate_docs.py
 ### **Configuration**
 
 Edit `config/framework.yaml` to customize:
-- Domain selection
-- AMPEL subset
+- Domain selection  
+- AMPEL subset and green scoring
 - Lifecycle phases
 - Documentation format
+- Green potential thresholds
+
+See `docs/GREEN-FRAMEWORK-USAGE.md` for detailed usage guide.
 
 ---
 
