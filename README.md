@@ -2,24 +2,29 @@
 
 ## **Organizational, Procedural, Technical, Intelligent Machine as Digital Twin**
 
-[![Framework Version](https://img.shields.io/badge/Version-3.0-blue)]()
+[![Framework Version](https://img.shields.io/badge/Version-10.0-blue)]()
 [![TRL Coverage](https://img.shields.io/badge/TRL-2--9-green)]()
-[![AMPELs](https://img.shields.io/badge/AMPELs-43-orange)]()
+[![AMPELs](https://img.shields.io/badge/AMPELs-35-orange)]()
 [![Segments](https://img.shields.io/badge/Segments-15-purple)]()
 [![Certification](https://img.shields.io/badge/FAR25-Compliant-red)]()
+[![Layers](https://img.shields.io/badge/OPTIM_Layers-5-lightblue)]()
+[![Domains](https://img.shields.io/badge/Domains-5-darkgreen)]()
+[![Generator](https://img.shields.io/badge/Generator-V10.0_Complete-gold)]()
 
 ---
 
 ## **🎯 Executive Summary**
 
-**OPTIM-DT_AMEDEO-PELLICCIA** is a comprehensive Digital Twin framework for aerospace systems development, certification, and lifecycle management. It integrates enterprise governance with technical implementation through a structured 5-layer architecture supporting 43 aircraft morphologies (AMPELs) across all Technology Readiness Levels (TRL 2-9).
+**OPTIM-DT_AMEDEO-PELLICCIA** is a comprehensive Digital Twin framework for aerospace systems development, certification, and lifecycle management. It integrates enterprise governance with technical implementation through a structured 5-layer OPTIM architecture supporting 35 aircraft morphologies (AMPELs) across 5 domains and all Technology Readiness Levels (TRL 2-9).
 
-### **Key Metrics**
-- **43** Aircraft Morphologies (AMPELs)
-- **15** Technical Segments (AMEDEO-PELLICCIA)
-- **5** OPTIM Integration Layers
+### **Key Metrics - V10.0 ULTIMATE COMPLETE**
+- **35** Aircraft Morphologies (AMPELs) across 5 domains
+- **15** Technical Segments (AMEDEO-PELLICCIA) 
+- **5** OPTIM Integration Layers (O-P-T-I-M)
+- **5** Application Domains (AIR-SPACE-GROUND-DEFENSE-CROSS)
 - **11** Canonical Lifecycle Phases
-- **76** Configuration Items (ARC segment)
+- **Variable** Configuration Items per segment
+- **Complete** CA/CI hierarchical structure
 - **FAR Part 25 / CS-25** Compliant Structure
 
 ---
@@ -44,15 +49,21 @@
 ```
 OPTIM-DT_AMEDEO-PELLICCIA/
 ├── 00-FRAMEWORK/                 # Core framework components
-├── 01-ORGANIZATIONAL/             # Enterprise governance
-├── 02-PROCEDURAL/                 # Process management
-├── 03-TECHNICAL-AMEDEO-PELLICCIA/ # 43 AMPELs × 15 segments
-├── 04-INTELLIGENT/                # AI/ML systems
-├── 05-MACHINE/                    # Digital Twin implementation
-├── config/                        # Configuration files
-├── docs/                          # Documentation
-├── scripts/                       # Automation scripts
-└── tests/                         # Testing framework
+├── O-ORGANIZATIONAL/             # Enterprise governance (V10.0)
+├── P-PROCEDURAL/                 # Process management (V10.0)
+├── T-TECHNICAL/                  # Technical implementation (V10.0)
+│   └── AMEDEO-PELLICCIA/         # 35 AMPELs × 5 domains × 15 segments
+│       ├── AIR/                  # 35 AMPELs (complete aviation)
+│       ├── SPACE/                # 10 AMPELs (spacecraft systems)
+│       ├── GROUND/               # 10 AMPELs (ground vehicles)
+│       ├── DEFENSE/              # 10 AMPELs (military platforms)
+│       └── CROSS/                # 10 AMPELs (integrated systems)
+├── I-INTELLIGENT/                # AI/ML systems (V10.0)
+├── M-MACHINE/                    # Digital Twin implementation (V10.0)
+├── config/                       # Configuration files
+├── docs/                         # Documentation
+├── scripts/                      # Automation scripts
+└── tests/                        # Testing framework
 ```
 
 ---
@@ -137,7 +148,7 @@ The **15 Technical Segments** provide complete aircraft system coverage:
 
 ## **✈️ AMPEL Architectures**
 
-### **43 Aircraft Morphologies by TRL**
+### **35 Aircraft Morphologies by TRL (V10.0 Complete)**
 
 #### **TRL 9 - Operational (15)**
 | AMPEL | Architecture | Examples |
@@ -145,48 +156,62 @@ The **15 Technical Segments** provide complete aircraft system coverage:
 | 01-TUW | Tube-and-Wing | Boeing 737/787, Airbus A320/350 |
 | 02-CANARD | Canard | Piaggio P180, Beech Starship |
 | 03-TSA | Three-Surface Aircraft | Piaggio P180 Avanti |
-| 04-TAILLESS | Tailless/Flying Wing | B-2 Spirit |
-| 05-DELTA | Delta Wing | Concorde, Mirage 2000 |
+| 04-TAILLESS | Tailless/Flying Wing | B-2 Spirit, B-21 Raider |
+| 05-DELTA | Delta Wing | Concorde, Mirage 2000, Tejas |
 | 06-VGW | Variable Geometry Wing | F-14, B-1 Lancer |
 | 07-VTOL-JET | VTOL Jet | Harrier, F-35B |
 | 08-TILTROTOR | Tiltrotor | V-22 Osprey, AW609 |
-| 09-AUTOGYRO | Autogyro | Cierva C.30 |
+| 09-AUTOGYRO | Autogyro | AutoGyro Cavalon |
 | 10-STOL | Short Take-Off and Landing | Twin Otter |
-| 11-AMPHIBIOUS | Amphibious | CL-415, US-2 |
-| 12-SUPERSONIC | Supersonic | Concorde |
-| 13-ELECTRIC-FIXED | Electric Fixed Wing | Pipistrel Alpha |
-| 14-BIPLANE | Biplane | Pitts Special |
+| 11-AMPHIBIOUS | Amphibious | CL-415, US-2, Icon A5 |
+| 12-SUPERSONIC | Supersonic | Concorde, Boom Overture |
+| 13-ELECTRIC-FIXED | Electric Fixed Wing | Velis Electro |
+| 14-BIPLANE | Biplane | Pitts Special, WACO |
 | 15-TWIN-FUSELAGE | Twin Fuselage | Stratolaunch |
 
 #### **TRL 8-7 - Flight Demonstrated (8)**
 | AMPEL | Architecture | Status |
 |-------|--------------|--------|
 | 16-FSW | Forward-Swept Wing | X-29, Su-47 |
-| 17-TANDEM | Tandem Wing | Rutan Quickie |
+| 17-TANDEM | Tandem Wing | Quickie, Dragonfly |
 | 18-LIFTING-BODY | Lifting Body | Dream Chaser |
-| 19-HYBRID-AIRSHIP | Hybrid Airship | Airlander 10 |
-| 20-COMPOUND-HELI | Compound Helicopter | Sikorsky X2 |
-| 21-GROUND-EFFECT | Ground Effect Vehicle | Ekranoplan |
-| 22-ELECTRIC-ROTARY | Electric Rotary Wing | Volocopter |
-| 23-SOLAR | Solar Powered | Solar Impulse |
+| 19-HYBRID-AIRSHIP | Hybrid Airship | Airlander |
+| 20-COMPOUND-HELI | Compound Helicopter | S-97 Raider |
+| 21-GROUND-EFFECT | Ground Effect Vehicle | REGENT |
+| 22-ELECTRIC-ROTARY | Electric Rotary Wing | Joby, Archer |
+| 23-SOLAR | Solar Powered | Zephyr S |
 
-#### **TRL 6-5 - Prototype (8)**
+#### **TRL 6-5 - Prototype (7)**
 | AMPEL | Architecture | Program |
 |-------|--------------|---------|
-| 24-BWB | Blended Wing Body | X-48B/C |
-| 25-TBW | Truss-Braced Wing | NASA X-66A |
-| 26-OW | Oblique Wing | NASA AD-1 |
-| 27-DP | Distributed Propulsion | X-57 Maxwell |
+| 24-BWB | Blended Wing Body | JetZero |
+| 25-TBW | Truss-Braced Wing | X-66A |
+| 26-OW | Oblique Wing | AD-1 |
+| 27-DP | Distributed Propulsion | X-57 |
 | 28-TILTWING | Tiltwing | CL-84 |
-| 29-CYCLOGYRO | Cyclogyro | D-Dalus |
-| 30-HYPERSONIC | Hypersonic | X-51A |
-| 31-TAILSITTER | VTOL Tailsitter | XFY Pogo |
+| 29-CYCLOGYRO | Cyclogyro | CycloTech |
+| 30-HYPERSONIC | Hypersonic | X-43A |
 
-#### **TRL 4-3 - Research (9)**
+#### **TRL 4-3 - Research (5)**
 | AMPEL | Architecture | Concept |
 |-------|--------------|---------|
-| 32-JW | Joined Wing | NASA studies |
+| 31-TAILSITTER | Tailsitter | XFY Pogo |
+| 32-JW | Joined Wing | SensorCraft |
 | 33-BW | Box Wing | PrandtlPlane |
+| 34-MW | Morphing Wing | MADCAT |
+| 35-BLI | Boundary Layer Ingestion | STARC-ABL |
+
+### **Domain Distribution (V10.0)**
+
+| Domain | AMPELs | Description | Coverage |
+|--------|--------|-------------|----------|
+| **AIR** | 35 | Complete aviation systems | All morphologies |
+| **SPACE** | 10 | Spacecraft configurations | AMPEL-18 to 27 |
+| **GROUND** | 10 | Ground vehicle systems | AMPEL-09 to 18 |
+| **DEFENSE** | 10 | Military platforms | AMPEL-04 to 13 |
+| **CROSS** | 10 | Integrated systems | AMPEL-21 to 30 |
+
+**Total: 75 Domain-AMPEL combinations**
 | 34-MW | Morphing Wing | NextGen |
 | 35-BLI | Boundary Layer Ingestion | STARC-ABL |
 | 36-ORNITHOPTER | Ornithopter | SmartBird |
@@ -266,8 +291,17 @@ Each Configuration Item progresses through:
 git clone https://github.com/your-org/OPTIM-DT_AMEDEO-PELLICCIA.git
 cd OPTIM-DT_AMEDEO-PELLICCIA
 
-# Generate the complete framework structure
-python3 scripts/generate_framework_v3.py
+# Generate the V10.0 COMPLETE framework structure
+python3 OPTIM-Framework-Generator/generate_framework_v10.py
+
+# Or with custom options
+python3 OPTIM-Framework-Generator/generate_framework_v10.py --base MY-OPTIM-FRAMEWORK
+
+# Dry run test (no files created)
+python3 OPTIM-Framework-Generator/generate_framework_v10.py --dry
+
+# Generate V8.0 legacy framework
+python3 OPTIM-Framework-Generator/generate_framework.py
 
 # Verify the structure
 python3 scripts/verify_structure.py
@@ -276,11 +310,29 @@ python3 scripts/verify_structure.py
 python3 scripts/generate_docs.py
 ```
 
+### **Framework Generators Available**
+
+| Generator | Version | AMPELs | Domains | Features |
+|-----------|---------|--------|---------|----------|
+| `generate_framework_v10.py` | **V10.0** | **35** | **5** | **Complete OPTIM layers** |
+| `generate_framework.py` | V8.0 | 3 | 1 | External data, validation |
+
 ### **System Requirements**
 
 - Python 3.8+
-- 50GB disk space (full framework)
+- PyYAML>=6.0
+- **200GB disk space** (V10.0 full framework)
+- **50GB disk space** (V8.0 framework)
 - Git LFS (for large files)
+
+### **V10.0 Framework Scale**
+
+The V10.0 generator creates an **ULTIMATE COMPLETE** structure:
+- **427,135 files** and **223,308 directories**
+- **5 OPTIM layers** × **5 domains** × **35 AMPELs**
+- **15 AMEDEO-PELLICCIA segments** per AMPEL
+- **Variable CAs** per segment, **Variable CIs** per CA
+- **11 lifecycle phases** per CI
 
 ### **Configuration**
 
