@@ -1,0 +1,13 @@
+P-PROPULSION:
+  description: "Propulsion systems and power generation"
+  cis:
+    - ["CI-P001", "ENGINE-CORE", "Turbine core assembly and components"]
+    - ["CI-P002", "FAN-ASSEMBLY", "Fan blades, case, and drive system"]
+    - ["CI-P003", "COMBUSTION-CHAMBER", "Combustor and fuel injection systems"]
+    - ["CI-P004", "EXHAUST-SYSTEM", "Nozzle and exhaust gas management"]
+    - ["CI-P005", "ENGINE-CONTROLS", "FADEC and engine control systems"]
+    - ["CI-P006", "MOUNTING-SYSTEM", "Engine mounts and isolation systems"]
+    - ["CI-P007", "ACCESSORIES-GEARBOX", "Accessory drives and gearbox"]
+    - ["CI-P008", "REVERSER-SYSTEM", "Thrust reverser mechanisms"]
+    - ["CI-P009", "ENGINE-MONITORING", "Health monitoring and diagnostics"]
+    - ["CI-P010", "AUXILIARY-POWER", "APU and backup power systems"]
