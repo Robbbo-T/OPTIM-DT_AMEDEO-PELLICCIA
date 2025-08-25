@@ -744,7 +744,7 @@ class OPTIMFrameworkComplete:
         
         if not self.dry:
             config_path = config_dir / "framework.yaml"
-            with open(config_path, 'w') as f:
+            with open(config_path, 'w', encoding='utf-8') as f:
                 yaml.dump(framework_config, f, default_flow_style=False, sort_keys=False)
         
         print(f"  ✓ Framework configuration")
