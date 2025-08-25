@@ -167,7 +167,7 @@ class OPTIMGreenFramework:
         """Generate UTCS-MI header"""
         return (f"EstándarUniversal:Documento-{doc_type}-ARP4754A-00.00-"
                 f"{identifier}-0001-v1.0-OPTIM-as-DT-GeneracionHumana-AIR-"
-                f"AmedeoPelliccia-7f3c9a2b-Diseno→Operacion\n\n")
+                "AmedeoPelliccia-7f3c9a2b-Diseno→Operacion\n\n")
 
     def get_green_emoji(self, score):
         """Get green potential emoji based on score"""
