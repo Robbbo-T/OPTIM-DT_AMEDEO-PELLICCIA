@@ -800,7 +800,7 @@ class OPTIMFrameworkComplete:
             trl = ampel_data['trl']
             trl_counts[trl] = trl_counts.get(trl, 0) + 1
         
-        print(f"\n📈 TRL BREAKDOWN")
+        print("\n📈 TRL BREAKDOWN")
         print("-" * 30)
         for trl in sorted(trl_counts.keys(), reverse=True):
             print(f"TRL {trl}:              {trl_counts[trl]:,}")
