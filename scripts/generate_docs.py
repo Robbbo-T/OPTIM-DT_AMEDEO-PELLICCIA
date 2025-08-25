@@ -125,7 +125,7 @@ class DocumentationGenerator:
         
         api_readme = api_dir / "README.md"
         
-        with open(api_readme, 'w') as f:
+        with open(api_readme, 'w', encoding='utf_8') as f:
             f.write("# OPTIM-DT Framework API Documentation\n\n")
             f.write(f"Generated: {self.timestamp}\n\n")
             
