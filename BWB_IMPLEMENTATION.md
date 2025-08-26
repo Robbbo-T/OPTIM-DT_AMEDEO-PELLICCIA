@@ -16,7 +16,7 @@ The BWB (Blended Wing Body) framework has been successfully implemented with:
 ## Framework Structure
 
 ```
-T-TECHNICAL/AMEDEO-PELLICCIA/AIR/AMPEL-24-BWB/
+T-TECHNICAL/AIR/AMPEL-BWB/
 ├── README.md
 ├── ampel-config.yaml                     # BWB-specific configuration
 │
