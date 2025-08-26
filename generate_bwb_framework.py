@@ -219,7 +219,7 @@ def main():
     """Main function"""
     import argparse
     
-    parser = argparse.ArgumentParser(description="BWB AMPEL-24-BWB Framework Generator")
+    parser = argparse.ArgumentParser(description="BWB AMPEL-BWB Framework Generator")
     parser.add_argument("--base", default=".", help="Base directory")
     parser.add_argument("--output", default="T-TECHNICAL/AIR/AMPEL-BWB", 
                        help="Output directory for BWB framework")
