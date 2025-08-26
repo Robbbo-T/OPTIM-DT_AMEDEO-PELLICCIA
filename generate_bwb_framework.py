@@ -17,7 +17,7 @@ from generate_framework_v10 import OPTIMUltimateFramework
 
 class BWBFrameworkGenerator:
     """
-    Specialized generator for BWB AMPEL-24-BWB framework
+    Specialized generator for BWB AMPEL-BWB framework
     """
     
     def __init__(self, base_path="T-TECHNICAL/AIR/AMPEL-BWB"):
